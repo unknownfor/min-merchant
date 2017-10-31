@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="page__hd login-logo">
+    <image class='uinfo' src="../../imgs/logo_jiayouzan.png"></image>
+  </view>
+  <view class="page__bd">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+           <image class='phone' src='../../imgs/ic_iphone.png'></image>
+          <input class="weui-input" placeholder="账号" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+            <image class='psw' src='../../imgs/ic_password.png'></image>
+          <input class="weui-input" placeholder="密码" />
+        </view>
+      </view>
+       <navigator url="/pages/index/index?title=index">
+       <view class="weui-btn-area">
+     
+      <button class="weui-btn" type="warm" bindtap="showTopTips">登录</button>
+     
+    </view>
+    </navigator>
+    
+     
+  </view>
+</view>

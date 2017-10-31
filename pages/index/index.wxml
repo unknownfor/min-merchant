@@ -1,0 +1,45 @@
+<view class="page1">
+  <view class='page-top'>
+    <view>
+     <image  class="jia" src='../../imgs/ic_jia_white.png'></image>
+      <text class='infoname'>123456789</text><image class='more' src='../../imgs/btn_more.png'></image>
+   </view>
+  
+    <view class='revenue'>
+     <view class='re-title'>今日订单9笔，合计营收</view> 
+      <view class='money'>￥<text class='m_num'>300</text></view>
+    </view>
+  </view>
+  
+  <view class='page-bottom'>
+  <view class="page">
+    <view class="page__bd">        
+        <view class="weui-cells__title">订单记录</view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="/pages/complete/complete?title=complete" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../../imgs/ic_complete.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">完成订单</view>
+                <view class="weui-badge" style="margin-right: 5px;">99+</view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../../imgs/ic_yuyue.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">预约订单</view>
+            </navigator>
+             <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="../../imgs/ic_cancel.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">取消订单</view>
+            </navigator>
+        </view>
+    </view>
+</view></view>
+
+
+
+
+</view>
