@@ -4,6 +4,7 @@
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "商户端",
     "backgroundColor": "#E32928",
-    "backgroundTextStyle": "light"
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
   
 }

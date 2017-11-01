@@ -1,0 +1,33 @@
+<!--pages/appointment/appointment.wxml-->
+<view class='page'>
+  <view class='list'>
+    <view class="app_title">2017年8月8日</view>
+  </view>
+  
+    <navigator url="/pages/appointment/app_details/app_details?title=app_details" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+<view class='lists'>
+      <view class='list_title'>商品名称
+        <text class='style_red'>{{123344546}}</text>
+      </view>
+      <view class='list_num'>订单编号
+        <text>{{123344546}}</text>
+      </view>
+      <view class='list_time'>预约时间 {{11231234}}</view>
+     
+  </view>
+ </navigator>
+
+ <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+<view class='lists'>
+      <view class='list_title'>商品名称
+        <text class='style_red'>{{123344546}}</text>
+      </view>
+      <view class='list_num'>订单编号
+        <text>{{123344546}}</text>
+      </view>
+      <view class='list_time'>预约时间 {{11231234}}</view>
+     
+  </view>
+ </navigator>
+
+</view>

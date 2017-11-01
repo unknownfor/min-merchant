@@ -1,0 +1,37 @@
+.page{
+ height:100vh;
+ width:100vw; 
+background-color: #f7f7f7;
+padding-top: 20rpx;
+}
+.det_title{   
+  height: 213rpx;   
+  background: #fff;    
+  text-align: center; 
+}
+.title_n{   
+  font-size: 30rpx;
+  color: #666;   
+  margin-top: 40rpx;
+}   
+.title_m{   
+	font-family: PingFang SC;
+	font-size: 50rpx;
+	color: #e32828;
+  font-weight: bold;
+}
+.weui-cells{
+  margin: 20rpx 0;
+}
+.weui-cell{
+  height: 88rpx;
+  padding:0 15px;
+}
+.weui-cell__bd{
+  font-size: 28rpx;
+	color: #666666;
+}
+.weui-cell__ft{
+  color: #303030;
+  font-size: 28rpx;
+}
