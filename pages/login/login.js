@@ -20,6 +20,9 @@ Page({
     console.log(e.detail.value)
   },
   logIn: function () {
+     wx.navigateTo({
+          url: '../index/index'
+        })
     var that = this
     wx.request({
       url: '',
@@ -37,9 +40,9 @@ Page({
           wx.setStorageSync('id_token', res.data.id_token)
         } catch (e) {
         }
-        wx.navigateTo({
-          url: '../index/index'
-        })
+        // wx.navigateTo({
+        //   url: '../index/index'
+        // })
         console.log(res.data);
       },
       fail: function (res) {

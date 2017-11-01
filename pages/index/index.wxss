@@ -26,6 +26,7 @@
 .jia{
   width: 28rpx;
   height: 28rpx;
+  vertical-align: middle;
 }
 
 .more{

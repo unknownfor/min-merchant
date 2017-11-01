@@ -1,10 +1,10 @@
 const app = getApp();
 
 Page({
+
   openConfirm: function () {
     wx.showModal({
-      title: '确定退出登录?',
-      // content: '弹窗内容，告知当前状态、信息和解决方法，描述文字尽量控制在三行内',
+      title: '确定退出登陆？',
       confirmText: "取消",
       cancelText: "确定",
       confirmColor:"#e6251c",
@@ -16,7 +16,6 @@ Page({
           console.log('用户点击辅助操作')
         }
       }
-    });
+    })
   }
-  
-})
+});

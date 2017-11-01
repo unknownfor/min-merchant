@@ -1,11 +1,10 @@
 <view class="page1">
   <view class='page-top'>
-    <view class='user'>
-      <navigator url='/pages/index/exit/exit?title=exit'>
+    <view class='user' bindtap='Toinfo'>  
         <image class="jia" src='../../imgs/ic_jia_white.png'></image>
-        <text class='infoname'></text>
+        <text class='infoname'>{{12345678}}</text>
         <image class='more' src='../../imgs/btn_more.png'></image>
-      </navigator>
+      <!-- </navigator> -->
     </view>
 
     <view class='revenue'>

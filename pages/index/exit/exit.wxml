@@ -1,15 +1,14 @@
 <view class=page">
-<view class='user'>
-  <image  class="jia" src='../../../imgs/ic_jia_red.png'></image>
-      <text class='infoname'>123456789</text>
+  <view class='user'>
+      <image  class="jia " src='../../../imgs/ic_jia_red.png'></image>
+      <text class='infoname'>{{12346567}}</text>
   </view>
 
-<view class="page__bd">
-        <view class="weui-btn-area">
-            <button class="weui-btn" type="default" bindtap="openConfirm">退出登录</button>
-            <!-- <button class="weui-btn" type="default" bindtap="openAlert">Alert Dialog</button> -->
-        </view>
-    </view>
+  <!-- <view class="page__bd "> -->
+     <!-- <view class="weui-btn-area ">  -->
+      <button class="exitbtn"   bindtap="openConfirm">退出登录</button>
+         <!-- </view>  -->
+     <!-- </view>  -->
 
 
 </view>
