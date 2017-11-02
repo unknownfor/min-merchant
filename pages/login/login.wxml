@@ -6,7 +6,7 @@
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__bd">
         <image class='phone' src='../../imgs/ic_iphone.png'></image>
-        <input class="weui-input" placeholder="账号" type="number" bindinput="userNameInput" />
+        <input class="weui-input" placeholder="账号" type="number" bindinput="changeColor"/>
       </view>
     </view>
     <view class="weui-cell weui-cell_input">
@@ -18,7 +18,7 @@
     <!-- <navigator url="/pages/index/index?title=index"> -->
       <view class="weui-btn-area">
 
-        <button class="weui-btn" type="warm" bindtap="logIn">登录</button>
+        <button class="loginbtn"  bindtap="logIn" style='opacity:{{opacity}}' >登录</button>
 
 
        </view> 

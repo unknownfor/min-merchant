@@ -4,7 +4,8 @@
     <view class="com_title">{{date}}</view>
     <view class='com_money'>￥{{add}}元</view>
   </view>
-  <navigator url="/pages/complete/details/details?title=details" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{zhihu}}" >
+  <!--url="/pages/complete/details/details?title=details"   -->
+  <navigator url="/pages/complete/details/details?title=details" bindtap="listClick" class="weui-cell weui-cell_access" id="{{index}}" wx:for="{{zhihu}}" >
     <view class='order'>
       <view class='lists'>
         <view class='lists_l'>
@@ -15,11 +16,6 @@
           <text class='red'> +{{item.type}}</text>元</view>
       </view>
       <view class='paytime'>付款时间{{item.ga_prefix}}</view>
-
-
     </view>
   </navigator>
-
-
-
 </view>

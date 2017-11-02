@@ -8,7 +8,7 @@ Page({
   onLoad: function () {
     var that = this//不要漏了这句，很重要
     wx.request({
-      url: 'http://news-at.zhihu.com/api/4/news/latest',
+      url: "http://news-at.zhihu.com/api/4/news/latest",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -22,7 +22,6 @@ Page({
 
       }
     })
-
-
   }
+   
 })

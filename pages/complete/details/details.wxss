@@ -4,17 +4,20 @@
 background-color: #f7f7f7;
 padding-top: 20rpx;
 }
-.det_title{
-  height: 213rpx;
+.det_title{   
+  height: 213rpx;   
   background: #fff; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+
 }
-.title_n{
+.title_n{   
   font-size: 30rpx;
-  color: #666;
-  margin-top: 40rpx;
-}
-.title_m{
+  color: #666;   
+}   
+.title_m{   
 	font-family: PingFang SC;
 	font-size: 50rpx;
 	color: #e32828;
@@ -34,4 +37,9 @@ padding-top: 20rpx;
 .weui-cell__ft{
   color: #303030;
   font-size: 28rpx;
+}
+.weui-cells::after,
+.weui-cells::before
+{
+  border: 0;
 }

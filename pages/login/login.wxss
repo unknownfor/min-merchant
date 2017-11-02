@@ -22,6 +22,7 @@ input {
   margin-top: 40rpx;
   padding-left: 67rpx;
   border-radius: 6rpx;
+  background: #fff;
 }
 .phone, .psw {
   width: 32rpx;
@@ -31,12 +32,13 @@ input {
   bottom: 24rpx;
 }
 
-.weui-btn {
+.loginbtn {
   width: 630rpx;
   height: 80rpx;
   line-height: 80rpx;
   border-radius: 8rpx 8rpx 8rpx 8rpx;
-  background-color: #ee8e8a;
+  background-color: #e6251c;
+  /* opacity: 0.4; */
   font-size: 16px;
   color: white;
 }

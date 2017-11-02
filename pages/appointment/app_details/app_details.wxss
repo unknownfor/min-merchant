@@ -6,13 +6,16 @@ padding-top: 20rpx;
 }
 .det_title{   
   height: 213rpx;   
-  background: #fff;    
-  text-align: center; 
+  background: #fff; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
 }
 .title_n{   
   font-size: 30rpx;
   color: #666;   
-  margin-top: 40rpx;
 }   
 .title_m{   
 	font-family: PingFang SC;
@@ -34,4 +37,9 @@ padding-top: 20rpx;
 .weui-cell__ft{
   color: #303030;
   font-size: 28rpx;
+}
+.weui-cells::after,
+.weui-cells::before
+{
+  border: 0;
 }

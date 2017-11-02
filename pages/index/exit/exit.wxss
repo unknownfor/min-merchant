@@ -8,18 +8,21 @@
 .user{
   width: 100%;
 	height: 100rpx;
-	background-color:#fff;
-  text-align: center;
-	font-size: 28rpx;
-	font-weight: normal;
-	color: #303030;
-  line-height:100rpx
+  display: flex;
+  flex-direction:row ;
+  justify-content: center;
+  align-items:center;
+  background-color:#fff;	
 }
 .jia{
   width: 28rpx;
   height: 28rpx;
-  vertical-align: middle;
   margin-right: 16rpx;
+}
+.infoname{
+font-size: 28rpx;
+	font-weight: normal;
+	color: #303030;
 }
  .exitbtn{
   width: 630rpx;
