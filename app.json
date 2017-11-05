@@ -1,7 +1,7 @@
 {
   "pages":[
     "pages/login/login",
-    "pages/index/index",     
+    "pages/index/index",
     "pages/index/exit/exit",    
     "pages/complete/complete",
     "pages/complete/details/details",
@@ -9,9 +9,6 @@
     "pages/appointment/app_details/app_details",
     "pages/cancel/cancel",
     "pages/cancel/cancel_details/cancel_details"  
-
   ]
-  
- 
   
 }

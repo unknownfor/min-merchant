@@ -1,27 +1,40 @@
 const app = getApp();
-
 Page({
-
   data: {
-    
+    orderDet:{}
   },
   onLoad: function () {
+    let bookId = '3884108'
+    let baseUrl = `${app.globalData.doubanAPI}/v2/book/${bookId}`;
+    console.log(baseUrl)
+    // v2 / book /:id
     var that = this//不要漏了这句，很重要
     wx.request({
-      url: "http://news-at.zhihu.com/api/4/news/latest",
-      headers: {
-        'Content-Type': 'application/json'
+      url: baseUrl,
+      method: 'GET',
+      header: {
+        // 填写appalication/json会报错，为空或为其它的不报错，豆瓣API的问题
+        'Content-Type': 'appalication/json'
       },
-      success: function (res) {
-        //将获取到的json数据，存在名字叫zhihu的这个数组中
+      // 获取数据成功
+      success(res) {
+        console.log(res)
+        let orderDet = res.data;
+        console.log(orderDet)
+        let temp = {};
+        temp.name = orderDet.title;
+        temp.price = parseInt(orderDet.price);
+        temp.number = orderDet.isbn10;
+        temp.time = orderDet.pubdate;
         that.setData({
-          zhihu: res.data.stories,
-          date:res.data.date
-          //res代表success函数的事件对，data是固定的，stories是是上面json数据中stories
+          orderDet: temp
         })
-
+      },
+      // 获取数据失败
+      fail() {
+        console.log("failed");
       }
     })
   }
-   
+
 })

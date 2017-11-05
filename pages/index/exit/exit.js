@@ -16,8 +16,10 @@ Page({
           console.log('用户点击取消操作')
         } else {
           console.log('用户点击确定操作')
+          //清空 localStorage
+          
           // 确定退出跳转到登录页面 登录信息清除
-          wx.redirectTo({
+          wx.reLaunch({
             url: '../../login/login',
           })
         }
