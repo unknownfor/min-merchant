@@ -15,20 +15,19 @@ Page({
     this.setData({
       userName: e.detail.value
     })
-    console.log(this.data.userName)
+    // console.log(this.data.userName)
   },
   userPasswordInput: function (e) {
     this.setData({
-      userPassword: e.detail.value
+      userName: e.detail.value
     })
-    console.log(e.detail.value)
   },
-  //用户输入时候开启按钮，没有输入的时候禁用
+
+  //用户输完账号和密码是时候开启按钮，没有输入的时候禁用
   changeColor: function (e) {
-    var that = this
-    //console.log(e.detail.value)  
+    var that = this 
     var isTel = e.detail.value
-    //console.log(isTel)  
+    console.log(isTel)  
     if (isTel) {
       that.setData({
         disabled: false,

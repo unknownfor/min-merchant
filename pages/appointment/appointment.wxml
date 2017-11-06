@@ -1,16 +1,18 @@
 <!--pages/appointment/appointment.wxml-->
 <!--引用模板  -->
 <import src="/pages/template/orderNumber/orderNumber.wxml" />
+
 <view class="page">
   <view class='list'>
-    <view class="com_title">预约{{date}}</view>
-    <view class='com_money'>￥{{add}}元</view>
+    <view class="com_title">预约{{orderDet.time}}</view>
   </view>
   <!--url="/pages/complete/details/details?title=details"   -->
-  <block wx:for="{{zhihu}}" wx:key="index">
-    <navigator url="/pages/appointment/app_details/app_details?title=app_details" bindtap="listClick" class="weui-cell weui-cell_access" id="{{index}}">
-      <template is="orderNumber" data="{{...item}}" />
+  <block wx:for="{{orderDet}}" wx:key="index">
+    <navigator url="/pages/appointment/app_details/app_details?title=app_details" bindtap="listClick" class="weui-cell weui-cell_access" >
+      <template is="orderNumber" data="{{...orderDet}}" />
     </navigator>
   </block>
+  
+  <!--上拉刷新  -->
 
 </view>

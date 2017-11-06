@@ -1,14 +1,20 @@
 @import '/pages/template/orderNumber/orderNumber.wxss';
-.page {
+page {
+  height: 100%;
   background: #f7f7f7;
- height:100%;
- width:100vw;
 }
+
+.page {
+  width: 100vw;
+}
+
 .list{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 25rpx 40rpx;
-  font-size: 28rpx;
+  padding: 0 40rpx;  
+  height: 53rpx;  
+  line-height: 73rpx;
+  font-size: 24rpx;
   color: #666;
 }

@@ -1,7 +1,7 @@
 const app = getApp();
 Page({
   data: {
-    orderDet:{}
+    orderDet: {}
   },
   onLoad: function () {
     let bookId = '3884108'
@@ -26,6 +26,8 @@ Page({
         temp.price = parseInt(orderDet.price);
         temp.number = orderDet.isbn10;
         temp.time = orderDet.pubdate;
+        temp.page = orderDet.pages;
+        temp.get = temp.price * temp.page;
         that.setData({
           orderDet: temp
         })

@@ -29,7 +29,7 @@ Page({
         temp.number = bookInfo.isbn10;
         temp.page = bookInfo.pages;
         temp.time = bookInfo.pubdate;
-        temp.get = temp.price * temp.price;
+        temp.get = temp.price * temp.page;
         // that.data.orderInfo = temp;
         that.setData({
           orderInfo: temp

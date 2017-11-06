@@ -1,7 +1,13 @@
 const app = getApp();
 
 Page({
+  onLoad: function () {
+    // wx.request({
+    //   url: ,
+    // })
+//要获取tartitle的标题
 
+  },
   openConfirm: function () {
     wx.showModal({
       title: '确定退出登陆？',

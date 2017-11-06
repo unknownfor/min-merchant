@@ -6,13 +6,13 @@
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__bd">
         <image class='phone' src='../../imgs/ic_iphone.png'></image>
-        <input class="weui-input" placeholder="账号" type="number" bindinput="changeColor"/>
+        <input class="weui-input" placeholder="账号" type="number" bindinput="userNameInput" maxlength="11"/>
       </view>
     </view>
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__bd">
         <image class='psw' src='../../imgs/ic_password.png'></image>
-        <input class="weui-input" placeholder="密码" type="digit" bindinput="userPasswordInput" password='true' />
+        <input class="weui-input" placeholder="密码" type="digit" bindinput="userPasswordInput"  bindinput="changeColor" password='true' />
       </view>
     </view>
     <!-- <navigator url="/pages/index/index?title=index"> -->

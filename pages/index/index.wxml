@@ -20,26 +20,26 @@
         <view class="weui-cells__title">订单记录</view>
         <view class="weui-cells weui-cells_after-title detline">
            <navigator url="/pages/complete/complete?title=complete" class="weui-cell weui-cell_access" hover-class="weui-cell_active"> 
-          <view class="weui-cell__hd">
-            <image src="../../imgs/ic_complete.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          <view class="weui-cell__hd icon_box">
+            <image src="../../imgs/ic_complete.png"  class="icon"></image>
           </view>
-          <view class="weui-cell__bd">完成订单</view>
+          <view class="weui-cell__bd classify">完成订单</view>
           <view class="weui-badge" style="margin-right: 5px;">99+</view>
            </navigator> 
          
 
           <navigator url="/pages/appointment/appointment?title=appointment" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd">
-              <image src="../../imgs/ic_yuyue.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            <view class="weui-cell__hd icon_box">
+              <image src="../../imgs/ic_yuyue.png"  class="icon" ></image>
             </view>
-            <view class="weui-cell__bd">预约订单</view>
+            <view class="weui-cell__bd classify">预约订单</view>
           </navigator>
 
           <navigator url="/pages/cancel/cancel?title=cancel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd">
-              <image src="../../imgs/ic_cancel.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            <view class="weui-cell__hd icon_box">
+              <image src="../../imgs/ic_cancel.png"  class="icon"></image>
             </view>
-            <view class="weui-cell__bd">取消订单</view>
+            <view class="weui-cell__bd classify">取消订单</view>
           </navigator>
         </view>
       </view>
