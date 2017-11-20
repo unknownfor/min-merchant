@@ -1,9 +1,15 @@
-const app = getApp();
+
+import { Index } from 'index-model.js';
+var index = new Index(); //实例化 首页 对象
 
 Page({
   data:{
     userName:12345678
+  },
+  onLoad:function(){
+    index.getTotalInfo(null,(res)=>{
 
+    });
   },
   onPullDownRefresh: function () {
     setTimeout(() => {

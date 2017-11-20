@@ -1,5 +1,6 @@
 // 获取应用实例
-var app = getApp()
+import { Login } from 'login-model.js';
+var login = new Login(); //实例化 登录 对象
 Page({
   data: {
     opacity: 0.4,
@@ -41,70 +42,30 @@ Page({
     }
   },
   logIn: function () {
-    wx.redirectTo({
-      url: '../index/index'
-    })
-    var that = this
-
-    wx.request({
-      url: '',
-      data: {
+    var that = this,//不要漏了这句，很重要
+      paramsData = {
         username: this.data.userName,
         password: this.data.userPassword,
-      },
-      method: 'GET',
-      success: function (res) {
-        if (res.success = 0) {
-          that.setData({
-            id_token: res.data.id_token,
-            response: res
-          })
-
-          try {
-            wx.setStorageSync('id_token', res.data.id_token)
-          } catch (e) {
-          }
-          //  wx.navigateTo({
-          //       url: '../index/index'
-          //     })
-          console.log(res.data);
-
-        } else {
-          console.log(res.data);
-          console.log('is failed');
-          //登录失败弹框
-          // wx.showModal({
-          //   title: '登录失败',
-          //   content: '账号或密码错误，请重新输入',
-          //   showCancel:false,
-          //   success: function (res) {
-          //     if (res.confirm) {
-          //       console.log('用户点击确定')
-          //       //返回到登录页面
-          //     }
-          //   }
-          // })
-
-        }
-      },   
-
-      fail: function (res) {
-        console.log(res.data);
-        console.log('is failed');
-        //登录失败弹框
-        // wx.showModal({
-        //   title: '登录失败',
-        //   content: '账号或密码错误，请重新输入',
-        //   showCancel:false,
-        //   success: function (res) {
-        //     if (res.confirm) {
-        //       console.log('用户点击确定')
-        //       //返回到登录页面
-        //     }
-        //   }
-        // })
-
+      };
+    login.execLogin(paramsData,(res) => {
+      if (res.error_code == 2001){
+        wx.redirectTo({
+          url: '../index/index'
+        })
       }
-    })
+      if (res.error_code==9999){
+         //登录失败弹框
+          wx.showModal({
+            title: '登录失败',
+            content: '账号或密码错误，请重新输入',
+            showCancel:false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          })
+      }
+    });
   }
 })  
