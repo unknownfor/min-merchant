@@ -38,9 +38,13 @@ input {
   line-height: 80rpx;
   border-radius: 8rpx 8rpx 8rpx 8rpx;
   background-color: #e6251c;
-  /* opacity: 0.4; */
   font-size: 16px;
   color: white;
+  
+}
+.loginbtn.disabled{
+ opacity: 0.4;
+ pointer-events: none;
 }
 .weui-btn-area {
   margin-top: 60rpx;

@@ -13,9 +13,9 @@ class Login extends Base {
   execLogin(paramsData,callback) {
     var that = this;
     var param = {
-      url: 'v1/login/1',
+      url: '/v3/merchant/login',
       data:paramsData,
-
+      type:'post',
       sCallback: function (data) {
         callback && callback(data);
       },
