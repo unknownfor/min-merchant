@@ -1,0 +1,17 @@
+
+<!--引用模板  -->
+<import src="/pages/template/orderNumber/orderNumber.wxml" />
+<view class="page">
+  <view class='list'>
+    <view class="com_title">完成页{{orderDet.time}}</view>
+    <view class="com_money">收入￥{{orderDet.get}}</view>
+    
+  </view>
+  <!--url="/pages/complete/details/details?title=details"   -->
+  <block wx:for="{{orderDet}}" wx:key="index">
+    <navigator url="/pages/complete/details/details?title=details" bindtap="listClick" class="weui-cell weui-cell_access" >
+      <template is="orderNumber" data="{{...orderDet}}" />
+    </navigator>
+  </block>
+
+</view>

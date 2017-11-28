@@ -1,0 +1,20 @@
+/* pages/appointment/appointment.wxss */
+@import '/pages/template/orderNumber/orderNumber.wxss';
+page {
+  height: 100%;
+  background: #f7f7f7;
+}
+
+.page {
+  width: 100vw;
+}
+
+.list{
+  height: 53rpx;
+  padding: 0 40rpx;  
+} 
+.com_title{
+  font-size: 24rpx;
+  color: #666;
+  line-height: 73rpx;
+}

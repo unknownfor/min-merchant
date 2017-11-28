@@ -1,0 +1,56 @@
+.page {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  background: #f7f7f7;
+ height:100vh;
+ width:100vw;
+}
+
+.login-logo {  
+  margin-top: 110rpx;
+}
+
+.uinfo {
+  width: 168rpx;
+  height: 168rpx;
+}
+
+input {
+  border: 1px solid #ccc;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+  padding-left: 67rpx;
+  border-radius: 6rpx;
+  background: #fff;
+}
+.phone, .psw {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  left: 20rpx;
+  bottom: 24rpx;
+}
+
+.loginbtn {
+  width: 630rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  background-color: #e6251c;
+  /* opacity: 0.4; */
+  font-size: 16px;
+  color: white;
+}
+.weui-btn-area {
+  margin-top: 60rpx;
+}
+ .weui-cell {
+  width: 630rpx;
+  padding: 0;
+  margin: 0 auto;
+} 
+
+.weui-cell::before {
+  border: 0;
+}

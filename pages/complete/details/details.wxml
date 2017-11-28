@@ -1,0 +1,2 @@
+<import src="/pages/template/orderDetail_com/orderDetail_com.wxml" />
+<template is="orderDetail" data="{{...orderInfo}}"/>

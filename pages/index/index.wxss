@@ -1,0 +1,84 @@
+.page1 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; 
+
+} 
+.page-top{
+  display: block;
+  box-sizing: border-box;
+  height:361rpx;
+  background-color: #E32928;
+  position: relative;
+  text-align: center;
+  padding-top: 20rpx;
+  
+}
+.infoname{
+  font-size: 28rpx;
+  font-weight: normal;
+  color: white;
+  margin: 0 10rpx;
+}
+.jia{
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle
+}
+
+.more{
+  width:11rpx;
+  height: 20rpx;
+}
+.revenue{
+	width: 670rpx;
+	height: 293rpx;
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0rpx 0rpx 10rpx 0rpx 
+		rgba(118, 15, 15, 0.5);
+	border-radius: 8rpx 8rpx 8rpx 8rpx;
+  position: absolute;
+  top: 108rpx;
+  left: 40rpx;
+  text-align: center;
+}
+.re-title{
+  font-size: 28rpx;
+   margin-top: 73rpx; 
+}
+.money{
+  color: red;
+  margin-top: 48rpx;
+}
+.m_num{
+  font-size: 60rpx;
+}
+.page-bottom{ 
+  flex: 1;
+  background: #f7f7f7; 
+}
+.page{ 
+  padding-top: 81rpx;
+}
+.icon_box{
+	font-size: 28rpx;
+	font-weight: normal;
+	color: #666666;
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+.icon{  
+  width:100%;
+  height: 100%;
+}
+.classify{
+  font-size: 28rpx;
+  color: #666666;
+}
+.weui-cells::before,
+.weui-cells::after
+{
+  border: 0;
+}
