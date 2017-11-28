@@ -1,20 +1,16 @@
-
 import { Index } from 'index-model.js';
 var index = new Index(); //实例化 首页 对象
-
 Page({
   data: {
     mobile: ""
   },
-  onLoad: function(option){
+  onLoad: function (option) {
     this.setData({
-      mobile:option.mobile
+      mobile: option.mobile
     });
-    console.log('bbbbbbbb')
-    console.log(option.mobile)
-    // console.log(option)
-    index.getTotalInfo(null,(res)=>{
-        console.log(res)
+   
+    index.getTotalInfo(null, (res) => {
+      console.log(res)
     })
   },
   onPullDownRefresh: function () {

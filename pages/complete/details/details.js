@@ -6,17 +6,17 @@ Page({
 
   },
   onLoad: function () {
-    let bookId = '3884108'
-    let baseUrl = `${app.globalData.doubanAPI}/v2/book/${bookId}`;
-    console.log(baseUrl)
+    // let bookId = '3884108'
+    // let baseUrl = `${app.globalData.doubanAPI}/v2/book/${bookId}`;
+    // console.log(baseUrl)
     // v2 / book /:id
     var that = this//不要漏了这句，很重要
     wx.request({
-      url: baseUrl,
+      url: 'https://test.api.jiayouzan.com/merchant/auth/orders',
       method: 'GET',
       header: {
         // 填写appalication/json会报错，为空或为其它的不报错，豆瓣API的问题
-        'Content-Type': 'appalication/json'
+        'content-type': 'appalication/json'
       },
       // 获取数据成功
       success(res) {
