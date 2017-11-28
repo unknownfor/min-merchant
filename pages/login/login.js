@@ -26,10 +26,10 @@ Page({
   changeColor: function () {
     var that = this,
       mobileFlag = login.isMobile(this.data.mobile),
-      passwdFlag = this.data.passwd.length == 6,
-      btnClass = 'disabled';
+      passwdFlag = this.data.passwd.length==6,
+      btnClass='disabled';
     if (mobileFlag && passwdFlag) {
-      btnClass = '';
+      btnClass='';
     };
     that.setData({
       btnClass: btnClass
@@ -41,20 +41,20 @@ Page({
         mobile: this.data.mobile,
         passwd: this.data.passwd,
       };
-    login.execLogin(paramsData, (res) => {
-      if (res.error_code) {
-        //登录失败弹框
-        wx.showModal({
-          title: '登录失败',
-          content: res.msg,
-          showCancel: false,
-          success: function (res) {
-            if (res.confirm) {
-
+    login.execLogin(paramsData,(res) => {
+      if (res.error_code){
+          //登录失败弹框
+          wx.showModal({
+            title: '登录失败',
+            content: res.msg,
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                
+              }
             }
-          }
-        });
-      } else {
+          });
+      }else{
         wx.redirectTo({
           url: '../index/index'
         });

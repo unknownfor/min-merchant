@@ -90,6 +90,11 @@ class Base {
         return event.currentTarget.dataset[key];
     };
 
+    /*是否为手机号*/
+    isMobile(val){
+      return /^1(3|5|6|7|8|9)\d{9}$/.test(val);
+    };
+
 };
 
 export {Base};
