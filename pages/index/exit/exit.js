@@ -2,9 +2,15 @@ const app = getApp();
 
 Page({
   onLoad: function () {
-    // wx.request({
-    //   url: ,
-    // })
+    wx.request({
+      url:'https://test.api.jiayouzan.com/v3/merchant/auth/logout',
+      method: 'PUT',
+      success:function(res){
+        console.log(res.data)
+      },
+      
+    })
+
 //要获取tartitle的标题
 
   },

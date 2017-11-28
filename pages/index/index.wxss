@@ -45,7 +45,7 @@
 }
 .re-title{
   font-size: 28rpx;
-  margin-top: 73rpx;
+  margin-top: 73rpx; 
 }
 .money{
   color: red;

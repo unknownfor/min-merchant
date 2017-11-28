@@ -10,7 +10,6 @@ class Base {
         this.areaDataUrl=Config.areaDataUrl;
         this.onPay=Config.onPay;
     }
-
     //http 请求类, 当noRefech为true时，不做未授权重试机制
     request(params, noRefetch) {
         var that = this,

@@ -9,7 +9,7 @@ Page({
   },
   onLoad: function () {
     var that = this//不要漏了这句，很重要
-    appointment.getAppointmentData((res)=>{
+    appointment.getAppointmentData((res) => {
       console.log(res)
       let orderDet = res.data;
       console.log(orderDet)
@@ -27,7 +27,6 @@ Page({
   },
   //触底上拉加载新内容
   onReachBottom: function () {
-   
   }
 
 })

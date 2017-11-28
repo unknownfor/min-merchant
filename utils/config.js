@@ -4,6 +4,6 @@ class Config{
 
     }
 }
-Config.restUrl = 'https://zerg.yijiahotel.shop/api/v1/';
+Config.restUrl = 'https://test.api.jiayouzan.com/';
 
 export {Config};

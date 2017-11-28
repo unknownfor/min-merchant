@@ -13,17 +13,19 @@ class Index extends Base {
   getTotalInfo(paramsData, callback) {
     var that = this;
     var param = {
-      url: 'v1/totalinfo',
-      data: paramsData,
+      url: 'v3/merchant/auth/home_page',
+      type:'GET',
+      // data:paramsData,
 
-      sCallback: function (data) {
+     sCallback:function(data){
         callback && callback(data);
-      },
-      eCallback: function (data) {
-        callback && callback(data);
-      }
+        
+     },
+     eCallback:function(data){
+       callback && callback(data);
+     }
     };
-    this.request(param);
+   this.request(param);
   }
 };
 

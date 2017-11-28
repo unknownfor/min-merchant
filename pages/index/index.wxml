@@ -2,15 +2,15 @@
   <view class='page-top'>
     <view class='user' bindtap='Toinfo'>  
         <image class="jia" src='../../imgs/ic_jia_white.png'></image>
-        <text class='infoname'>{{12345678}}</text>
+        <text class='infoname'>{{mobile}}</text>
         <image class='more' src='../../imgs/btn_more.png'></image>
     </view>
 
     <view class='revenue'>
-      <view class='re-title'>今日订单9笔，合计营收</view>
-      <view class='money'>￥
+       <view class='re-title'>今日订单9笔，合计营收</view> 
+       <view class='money'>￥
         <text class='m_num'>300</text>
-      </view>
+      </view> 
     </view>
   </view>
 
@@ -45,5 +45,4 @@
       </view>
      </view> 
   </view>
-
 </view>
