@@ -5,7 +5,7 @@ Page({
   data: {
     btnClass: 'disabled',
     mobile: '18627039537',
-    passwd: '123456',
+    passwd: '',
     toastHidden: true,
     id_token: '',//方便存在本地的locakStorage  
     response: '' //存取返回数据  
