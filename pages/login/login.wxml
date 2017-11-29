@@ -7,12 +7,17 @@
       <view class="weui-cell__bd">
         <image class='phone' src='../../imgs/ic_iphone.png'></image>
          <input class="weui-input" placeholder="账号" value="{{mobile}}" type="number" bindinput="userNameInput" maxlength="11"/>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <image class='phone' src='../../imgs/ic_password.png'></image>
          <input class="weui-input" placeholder="密码" value="{{passwd}}" type="digit" bindinput="passwdInput"  password='true' /> 
       </view>
     </view>
     <!-- <navigator url="/pages/index/index?title=index"> -->
       <view class="weui-btn-area">
-        <button class="loginbtn {{btnClass}}" bindtap="logIn" style='opacity:{{opacity}}' >登录</button>
+        <button class="loginbtn {{btnClass}}" bindtap="logIn" >登录</button>
        </view> 
     <!-- </navigator> -->
   </view>

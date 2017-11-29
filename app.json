@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/different/different",
     "pages/login/login",
     "pages/index/exit/exit",
     "pages/complete/complete",

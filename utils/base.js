@@ -56,7 +56,7 @@ class Base {
     }
 
     _processError(err){
-        console.log(err);
+        // console.log(err);
     }
 
     _refetch(param) {

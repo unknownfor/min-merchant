@@ -9,7 +9,7 @@
   </view>
   <!--url="/pages/complete/details/details?title=details"   -->
   <block wx:for="{{orderDet}}" wx:key="index">
-    <navigator url="/pages/complete/details/details?title=details" bindtap="listClick" class="weui-cell weui-cell_access" >
+    <navigator url="/pages/complete/details/details?id={{order_data.id}}" bindtap="listClick" class="weui-cell weui-cell_access" >
       <template is="orderNumber" data="{{...orderDet}}" />
     </navigator>
   </block>

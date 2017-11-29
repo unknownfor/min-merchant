@@ -1,42 +1,40 @@
+import { Complete } from 'complete-model.js';
+var complete = new Complete();//实例化对象
 const app = getApp();
 Page({
   data: {
-    orderDet: {}
+    merch_type:'1',
+    order_status:'1',
+    order_money_all:'',
+    order_data:[]
   },
-  onLoad: function () {
-    // let bookId = 'auth/home_page'
-    // let baseUrl = `${app.globalData.g_restUrl}/v3/merchant/${bookId}`;
-    // console.log(baseUrl)
-    // v2 / book /:id
-    var that = this//不要漏了这句，很重要
-    wx.request({
-      url: 'https://test.api.jiayouzan.com/merchant/auth/orders',
-      method: 'GET',
-      header: {
-        // 填写appalication/json会报错，为空或为其它的不报错，豆瓣API的问题
-        'content-type': 'appalication/json'
-      },
-     
+  onLoad: function (options) {
+    var that = this,//不要漏了这句，很重要
+    paramsData = {
+      order_status: 1,
+      date_type:1,
+      date_start:'',
+      date_end:'',
+      page:3,
+      pageSize:5
+    };
+    complete.getCompleteData(paramsData,(res)=>{
       // 获取数据成功
-      success(res) {
-        console.log(res)
-        let orderDet = res.data;
-        console.log(orderDet)
+        console.log(paramsData);
+        console.log(res);
         let temp = {};
-        temp.name = orderDet.title;
-        temp.price = parseInt(orderDet.price);
-        temp.number = orderDet.isbn10;
-        temp.time = orderDet.pubdate;
-        temp.page = orderDet.pages;
-        temp.get = temp.price * temp.page;
+        temp.id = res.id;
+        temp.ordersn = res.ordersn;
+        temp.price = res.price;
+        temp.createtime = res.createtime;
+        
         that.setData({
-          orderDet: temp
+          merch_type: res.merch_type,
+          order_status: res.order_status,
+          order_money_all: res.order_money_all,
+          order_data: this.data.order_data.push(temp)
         })
-      },
-      // 获取数据失败
-      fail() {
-        console.log("failed");
-      }
+    //  获取数据失败
     })
   }
 })

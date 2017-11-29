@@ -4,17 +4,17 @@
 
 import { Base } from '../../utils/base.js';
 
-class Appointment extends Base {
+class Cancel extends Base {
   constructor() {
     super();
   }
 
   /*banner图片信息*/
-  getAppointmentData(callback) {
+  getCanceltData(callback) {
     var that = this;
     var param = {
       url: 'v3/merchant/auth/orders',
-      type:'GET',
+      type: 'GET',
       sCallback: function (data) {
         if (typeof data == 'string') {
           console.log('1---' + data.charCodeAt(0));
@@ -31,4 +31,4 @@ class Appointment extends Base {
   }
 };
 
-export { Appointment };
+export { Cancel };

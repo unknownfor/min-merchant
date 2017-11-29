@@ -4,7 +4,7 @@
 
 <view class="page">
   <view class='list'>
-    <view class="com_title">预约{{orderDet.time}}</view>
+    <view class="com_title">预约{{order_data.appointment_time}}</view>
   </view>
   <!--url="/pages/complete/details/details?title=details"   -->
   <block wx:for="{{orderDet}}" wx:key="index">

@@ -1,44 +1,43 @@
+import { Details } from 'details-model.js';
+var details = new Details();
 const app = getApp();
 Page({
-
   data: {
-    orderInfo: {}
-
+    id:'',
+    ordersn:'',
+    paytype:'',
+    status:'',
+    total_price:'',
+    createtime:'',
+    goods_detail:[]
   },
-  onLoad: function () {
-    // let bookId = '3884108'
-    // let baseUrl = `${app.globalData.doubanAPI}/v2/book/${bookId}`;
-    // console.log(baseUrl)
-    // v2 / book /:id
-    var that = this//不要漏了这句，很重要
-    wx.request({
-      url: 'https://test.api.jiayouzan.com/merchant/auth/orders',
-      method: 'GET',
-      header: {
-        // 填写appalication/json会报错，为空或为其它的不报错，豆瓣API的问题
-        'content-type': 'appalication/json'
-      },
+  
+  onLoad: function (options) {
+    var that = this,//不要漏了这句，很重要
+      paramsData = {
+        order_status: 1,
+        merch_type: 1
+      };
+    details.getDetailsData(paramsData, (res) => {
       // 获取数据成功
-      success(res) {
-        console.log(res)
-        let bookInfo = res.data;
-        console.log(bookInfo)
-        let temp = {};
-        temp.name = bookInfo.title;
-        temp.price = parseInt(bookInfo.price);
-        temp.number = bookInfo.isbn10;
-        temp.page = bookInfo.pages;
-        temp.time = bookInfo.pubdate;
-        temp.get = temp.price * temp.price;
-        // that.data.orderInfo = temp;
-        that.setData({
-          orderInfo: temp
-        })
-      },
+      console.log(res);
+      let det = {};
+      det.id = res.id;
+      det.goods_name = res.goods_name;
+      det.total = res.total;
+      det.price = res.price;
+      det.one_price = res.one_price;
+
+      that.setData({
+        id: res.id,
+        ordersn: res.ordersn,
+        paytype: res.paytype,
+        status: res.status,
+        total_price: res.total_price,
+        createtime: res.createtime,
+        goods_detail: this.data.goods_detail.push(temp)
+      })
       // 获取数据失败
-      fail() {
-        console.log("failed");
-      }
     })
   }
 

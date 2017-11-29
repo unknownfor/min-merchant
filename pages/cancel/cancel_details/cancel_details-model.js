@@ -1,17 +1,16 @@
-import { Base } from '../../utils/base.js';
+import { Base } from '../../../utils/base.js';
 
-class Complete extends Base {
+class Cancel_details extends Base {
   constructor() {
     super();
   }
 
   /*banner图片信息*/
-  getCompleteData(paramsData,callback) {
+  getCancel_detailsData(paramsData, callback) {
     var that = this;
     var param = {
-      url: 'v3/merchant/auth/orders',
-      type:'GET',
-     
+      url: 'v3/merchant/auth/orders' + options.id,
+      type: 'GET',
       sCallback: function (data) {
         callback && callback(data);
       },
@@ -23,5 +22,5 @@ class Complete extends Base {
   }
 };
 
-export { Complete };
+export { Cancel_details };
 

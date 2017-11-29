@@ -3,11 +3,11 @@
     <view class='lists'>
       <view class='lists_l'>
         <view>订单编号</view>
-        <view>{{number}}</view>
+        <view>{{order_data.ordersn}}</view>
       </view>
       <view class='lists_r'>
-        <text class='red'> +{{price}}</text>元</view>
+        <text class='red'> +{{order_data.price}}</text>元</view>
     </view>
-    <view class='paytime'>付款时间{{time}}</view>
+    <view class='paytime'>付款时间{{order_data.createtime}}</view>
   </view>
 </template>

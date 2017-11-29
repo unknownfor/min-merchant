@@ -3,7 +3,7 @@ var login = new Login(); //实例化 登录 对象
 Page({
   data: {
     btnClass: 'disabled',
-    mobile: '18627039537',
+    mobile: '',
     passwd: '',
     toastHidden: true,
     id_token: '',//方便存在本地的locakStorage  
@@ -55,9 +55,16 @@ Page({
             }
           });
       }else{
+        wx.setStorageSync('token', res.token);
+        if (res.merch_type == 1){
         wx.redirectTo({
-          url: '../index/index'
+          url: '../index/index?mobile='+res.mobile
         });
+      }else{
+        wx.redirectTo({
+          url: '../index/different/different?mobile=' + res.mobile
+        });
+      }
       }
     });
   }

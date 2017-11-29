@@ -36,7 +36,6 @@ input {
   background-color: #e6251c;
   font-size: 16px;
   color: white;
-  
 }
 .loginbtn.disabled{
  opacity: 0.4;

@@ -1,9 +1,10 @@
+<!--pages/index/different/different.wxml-->
 <view class="page1">
   <view class='page-top'>
     <view class='user' bindtap='Toinfo'>  
-        <image class="jia" src='../../imgs/ic_jia_white.png'></image>
+        <image class="jia" src='../../../imgs/ic_jia_white.png'></image>
         <text class='infoname'>{{mobile}}</text>
-        <image class='more' src='../../imgs/btn_more.png'></image>
+        <image class='more' src='../../../imgs/btn_more.png'></image>
     </view>
     <view class='revenue'>
        <view class='re-title'>今日订单{{order_num}}笔，合计营收</view> 
@@ -20,13 +21,13 @@
 
            <navigator url="/pages/complete/complete?title=complete" class="weui-cell weui-cell_access" hover-class="weui-cell_active"> 
           <view class="weui-cell__hd icon_box">
-            <image src="../../imgs/ic_complete.png"  class="icon"></image>
+            <image src="../../../imgs/ic_complete.png"  class="icon"></image>
           </view>
           <view class="weui-cell__bd classify">完成订单</view>
           <view class="weui-badge" style="margin-right: 5px;">{{new_finish_order_num}}</view>
            </navigator> 
          
-          <navigator url="/pages/appointment/appointment?title=appointment" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <!-- <navigator url="/pages/appointment/appointment?title=appointment" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__hd icon_box">
               <image src="../../imgs/ic_yuyue.png"  class="icon" ></image>
             </view>
@@ -38,7 +39,7 @@
               <image src="../../imgs/ic_cancel.png"  class="icon"></image>
             </view>
             <view class="weui-cell__bd classify">取消订单</view>
-          </navigator>
+          </navigator> -->
         </view>
       </view>
 
