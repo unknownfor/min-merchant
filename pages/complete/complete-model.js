@@ -11,6 +11,7 @@ class Complete extends Base {
     var param = {
       url: 'v3/merchant/auth/orders',
       type:'GET',
+      data:paramsData,
      
       sCallback: function (data) {
         callback && callback(data);

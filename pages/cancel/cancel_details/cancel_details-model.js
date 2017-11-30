@@ -11,6 +11,7 @@ class Cancel_details extends Base {
     var param = {
       url: 'v3/merchant/auth/orders' + options.id,
       type: 'GET',
+      data:paramsData,
       sCallback: function (data) {
         callback && callback(data);
       },

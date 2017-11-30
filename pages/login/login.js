@@ -42,6 +42,7 @@ Page({
         passwd: this.data.passwd,
       };
     login.execLogin(paramsData,(res) => {
+      console.log(res)
       if (res.error_code){
           //登录失败弹框
           wx.showModal({

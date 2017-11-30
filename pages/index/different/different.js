@@ -3,9 +3,9 @@ var different = new Different(); //实例化 首页 对象
 Page({
   data: {
     mobile: "",
-    order_num: '',
-    order_money: '',
-    new_finish_order_num: ''
+    orderNum: '',
+    orderMoney: '',
+    newFinishOrderNum: ''
 
   },
   onLoad: function (options) {
@@ -16,9 +16,9 @@ Page({
     different.getTotalInfo(null, (res) => {
       // console.log(res)
       this.setData({
-        order_num: res.order_num,
-        order_money: res.order_money,
-        new_finish_order_num: res.new_finish_order_num
+        orderNum: res.order_num,
+        orderMoney: res.order_money,
+        newFinishOrderNum: res.new_finish_order_num
       })
     })
   },
@@ -40,11 +40,22 @@ Page({
         console.log(res);
 
         const path = res.result;
-        console.log(path)
+        console.log(path);
+
         // 页面跳转到二维码指定页面，需要 path 为正确的 
-        res.path && wx.navigateTo({
-          url: path
-        })
+        // res.path && wx.navigateTo({
+        //   url: path
+        // })
+        wx.showModal({
+          title: '提示',
+          content: '点击确定进行兑换',
+          showCancel: true,
+          success: function (res) {
+            if (res.confirm) {
+
+            }
+          }
+        });
       }
     })
   }

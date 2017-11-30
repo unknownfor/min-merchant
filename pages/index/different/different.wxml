@@ -7,9 +7,9 @@
         <image class='more' src='../../../imgs/btn_more.png'></image>
     </view>
     <view class='revenue'>
-       <view class='re-title'>今日订单{{order_num}}笔，合计营收</view> 
+       <view class='re-title'>今日订单{{orderNum}}笔，合计营收</view> 
        <view class='money'>￥
-        <text class='m_num'>{{order_money}}</text>
+        <text class='m_num'>{{orderMoney}}</text>
       </view> 
     </view>
   </view>
@@ -24,7 +24,7 @@
             <image src="../../../imgs/ic_complete.png"  class="icon"></image>
           </view>
           <view class="weui-cell__bd classify">完成订单</view>
-          <view class="weui-badge" style="margin-right: 5px;">{{new_finish_order_num}}</view>
+          <view class="weui-badge" style="margin-right: 5px;">{{newFinishOrderNum}}</view>
            </navigator> 
          
           <!-- <navigator url="/pages/appointment/appointment?title=appointment" class="weui-cell weui-cell_access" hover-class="weui-cell_active">

@@ -7,22 +7,30 @@ Page({
     merch_type:'',
     order_status:'',
   },
-  onLoad: function () {
-    var that = this//不要漏了这句，很重要
-    appointment.getAppointmentData((res) => {
+  onLoad: function (options) {
+    var that = this,//不要漏了这句，很重要
+      date = new Date(),
+      year = date.getFullYear(),
+      month = date.getMonth() + 1,
+      day = date.getDate(),
+      startDate = [year, month, day].join('-'),
+      endDate = [year, month, day].join('-'),
+      paramsData = {
+        order_status: 2,
+        date_type: 1,
+        date_start: startDate,
+        date_end: endDate,
+        page: 5,
+        pageSize: 5
+      };
+    console.log(startDate)
+    appointment.getAppointmentData(paramsData, (res) => {
       console.log(res)
-      // let order_data = res.data;
-      console.log(order_data)
-      let temp = {};
-      temp.id = res.id;
-      temp.ordersn = res.ordersn;
-      temp.appointment_time = res.appointment_time;
-      temp.goods_name = res.goods_name;
 
       that.setData({
         merch_type: res.merch_type,
         order_status: res.order_status,
-        order_data: this.data.order_data.push(temp)
+        order_data: res.order_data
       })
     });
   },

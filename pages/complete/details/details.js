@@ -9,10 +9,10 @@ Page({
     status:'',
     total_price:'',
     createtime:'',
-    goods_detail:[]
+    goods_detail:''
   },
   
-  onLoad: function (options) {
+  onLoad: function () {
     var that = this,//不要漏了这句，很重要
       paramsData = {
         order_status: 1,
@@ -21,12 +21,13 @@ Page({
     details.getDetailsData(paramsData, (res) => {
       // 获取数据成功
       console.log(res);
-      let det = {};
-      det.id = res.id;
-      det.goods_name = res.goods_name;
-      det.total = res.total;
-      det.price = res.price;
-      det.one_price = res.one_price;
+      // let det = {};
+      // det.id = res.id;
+      // det.goods_name = res.goods_name;
+      // det.total = res.total;
+      // det.total_price = res.total_price;
+      // det.one_price = res.one_price;
+      // console.log(res.paytype)
 
       that.setData({
         id: res.id,
@@ -35,11 +36,10 @@ Page({
         status: res.status,
         total_price: res.total_price,
         createtime: res.createtime,
-        goods_detail: this.data.goods_detail.push(temp)
+        goods_detail: res.goods_detail //this.data.goods_detail.push(det)
       })
-      // 获取数据失败
+      
     })
+    console.log(this.data.goods_detail)
   }
-
-
 })

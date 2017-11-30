@@ -9,8 +9,9 @@ class Details extends Base {
   getDetailsData(paramsData, callback) {
     var that = this;
     var param = {
-      url: 'v3/merchant/auth/orders'+options.id,
+      url: 'v3/merchant/auth/orders/1',
       type: 'GET',
+      data:paramsData,
       sCallback: function (data) {
         callback && callback(data);
       },

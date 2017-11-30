@@ -1,5 +1,5 @@
-import { Cancel_details } from 'cancel_details-model.js';
-var cancel_details = new Cancel_details();//实例化对象
+import { AppDetails } from 'appDetails-model.js';
+var appDetails = new AppDetails();//实例化对象
 const app = getApp();
 Page({
   data: {
@@ -9,19 +9,22 @@ Page({
     status: '',
     total_price: '',
     createtime: '',
-    appointment_time: '',
-    carrier_realname: '',
-    carrier_mobile: '',
+    appointment_time:'',
+    carrier_realname:'',
+    carrier_mobile:'',
     goods_detail: []
   },
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this,//不要漏了这句，很重要
     paramsData = {
-      order_status: 3,
-      merch_type: 1
-    }
-    cancel_details.getCancel_detailsData(paramsData,(res) => {
+      order_status:2,
+      merch_type:1
+    };
+    appDetails.getAppDetailsData(paramsData,(res) => {
       console.log(res)
+      // let order_data = res.data;
+      console.log(order_data)
+     
       that.setData({
         id: res.id,
         ordersn: res.ordersn,
@@ -32,7 +35,7 @@ Page({
         appointment_time: res.appointment_time,
         carrier_realname: res.carrier_realname,
         carrier_mobile: res.carrier_mobile,
-        order_data: res.order_data
+        goods_detail: res.goods_detail
       })
     });
   },

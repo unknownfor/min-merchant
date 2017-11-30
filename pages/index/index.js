@@ -2,11 +2,11 @@ import { Index } from 'index-model.js';
 var index = new Index(); //实例化 首页 对象
 Page({
   data: {
-    mobile: '18627039537',
-    order_num:'',
-    order_money:'',
-    new_finish_order_num:''
-   
+    showStatus:true,
+    mobile: '', 
+    orderNum:'',
+    orderMoney:'',
+    newFinishOrderNum:''
   },
   onLoad: function (options) {
     this.setData({
@@ -16,11 +16,19 @@ Page({
     index.getTotalInfo(null, (res) => {
       // console.log(res)
       this.setData({
-        order_num: res.order_num,
-        order_money: res.order_money,
-        new_finish_order_num: res.new_finish_order_num
+        orderNum: res.order_num,
+        orderMoney: res.order_money,
+        newFinishOrderNum: res.new_finish_order_num
       })
+      // console.log(this.data.orderNum)
     })
+  },
+  changeShowStatus:function(){
+      this.setData({
+        showStatus:false
+      })
+      // console.log(this.data.showStatus)
+
   },
   
   onPullDownRefresh: function () {
@@ -29,12 +37,11 @@ Page({
       wx.stopPullDownRefresh() //停止下拉刷新
     }, 2000)
   },
-  Toinfo: function () {
+  toInfo: function () {
     wx.navigateTo({
-      url: 'exit/exit?mobile='+this.data.mobile,
+      url: 'exit/exit?mobile='+this.data.mobile
     })
   },
-  
   scan: function () {
     wx.scanCode({ // 调用扫码
       success: function (res) { // 扫描成功后

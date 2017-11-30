@@ -1,5 +1,5 @@
-<template name="orderNumber">
-  <view class='order'>
+<template name="orderNumber"  wx:if="{{order_data.length !== 0}}">
+  <view class='order'  wx:if="{{order_data}}.length !== 0" >
     <view class='lists'>
       <view class='lists_l'>
         <view>订单编号</view>

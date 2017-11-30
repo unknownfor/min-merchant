@@ -20,3 +20,9 @@ page {
   color: #666;
   line-height: 73rpx;
 }
+.without {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 100rpx;
+  color:#666;
+}

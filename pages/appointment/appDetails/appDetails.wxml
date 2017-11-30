@@ -1,0 +1,3 @@
+<!--pages/appointment/appDetails/appDetails.wxml-->
+<import src="/pages/template/orderDetail/orderDetail.wxml"/>
+<template is="orderDetail" data="{{...orderInfo}}"/>

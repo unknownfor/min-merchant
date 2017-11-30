@@ -1,17 +1,21 @@
 
 <!--引用模板  -->
 <import src="/pages/template/orderNumber/orderNumber.wxml" />
-<view class="page">
+<view class="page" wx:if="{{order_data.length !== 0}}">
   <view class='list'>
-    <view class="com_title">完成页{{orderDet.time}}</view>
-    <view class="com_money">收入￥{{orderDet.get}}</view>
+    <view class="com_title">{{order_data.createtime}}</view>
+    <view class="com_money">收入￥{{order_money_all}}</view>
     
   </view>
   <!--url="/pages/complete/details/details?title=details"   -->
-  <block wx:for="{{orderDet}}" wx:key="index">
+  <block wx:for="{{order_data}}" wx:key="index">
     <navigator url="/pages/complete/details/details?id={{order_data.id}}" bindtap="listClick" class="weui-cell weui-cell_access" >
-      <template is="orderNumber" data="{{...orderDet}}" />
+      <template is="orderNumber" data="{{...order_data}}" />
     </navigator>
   </block>
 
+</view>
+
+<view class='without' wx:if="{{order_data}}.length == 0">
+    <text>您当前没有任何订单</text>
 </view>
