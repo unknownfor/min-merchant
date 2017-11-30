@@ -12,61 +12,75 @@ Page({
     this.setData({
       mobile: options.mobile
     });
-   
+    this._loadData();
+  },
+
+
+  /*加载数据*/
+  _loadData:function(callback){
     index.getTotalInfo(null, (res) => {
-      // console.log(res)
       this.setData({
         orderNum: res.order_num,
         orderMoney: res.order_money,
         newFinishOrderNum: res.new_finish_order_num
-      })
-      // console.log(this.data.orderNum)
+      });
+      callback && callback();
     })
   },
+
   changeShowStatus:function(){
       this.setData({
         showStatus:false
-      })
-      // console.log(this.data.showStatus)
-
+      });
   },
   
-  onPullDownRefresh: function () {
-    setTimeout(() => {
-      wx.hideNavigationBarLoading() //完成停止加载
-      wx.stopPullDownRefresh() //停止下拉刷新
-    }, 2000)
-  },
   toInfo: function () {
     wx.navigateTo({
       url: 'exit/exit?mobile='+this.data.mobile
     })
   },
+
   scan: function () {
-    wx.scanCode({ // 调用扫码
-      success: function (res) { // 扫描成功后
-        console.log(res);
 
-        const path =  res.result;
-        console.log(path);
+    wx.showModal({
+      title: '提示',
+      content: '请确定该券为自己的商户券',
+      showCancel: true,
+      confirmText: "确定",
+      cancelText: "取消",
+      confirmColor: '#e6251c',
+      success: function (res) {
+        if (res.confirm) {
+          wx.scanCode({ // 调用扫码
+            success: function (res) { // 扫描成功后
+              const path = res.result;
+              console.log(path);
 
-        // 页面跳转到二维码指定页面，需要 path 为正确的 
-        // res.path && wx.navigateTo({
-        //   url: path
-        // })
-        wx.showModal({
-          title: '提示',
-          content: '点击确定进行兑换',
-          showCancel: true,
-          success: function (res) {
-            if (res.confirm) {
-              
+              wx.showModal({
+                title: '提示',
+                content: '扫码成功，下拉刷新查看核销结果',
+                showCancel: false,
+                success: function (res) {
+                  if (res.confirm) {
+
+                  }
+                }
+              });
             }
-          }
-        });
+          })
+        }
       }
-    })
+    });
+
+
+    
+  },
+
+  /*下拉刷新页面*/
+  onPullDownRefresh: function(){
+    this._loadData(()=>{
+      wx.stopPullDownRefresh();
+    });
   }
-  //后台返回的的用户名作为bartitle 
-  // wx.setNavigationBarTitle({  title: '当前页面'})
-})
+
+});

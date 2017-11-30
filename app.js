@@ -8,7 +8,7 @@ App({
     g_restUrl: "https://test.api.jiayouzan.com",
   },
   onLaunch: function () {
-    var token = new Token();
-    token.verify();
+    // var token = new Token();
+    // token.verify();
   }
 })
