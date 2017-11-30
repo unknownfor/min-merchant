@@ -2,7 +2,7 @@ import { Index } from 'index-model.js';
 var index = new Index(); //实例化 首页 对象
 Page({
   data: {
-    mobile: "",
+    mobile: '18627039537',
     order_num:'',
     order_money:'',
     new_finish_order_num:''
@@ -41,11 +41,22 @@ Page({
         console.log(res);
 
         const path =  res.result;
-        console.log(path)
+        console.log(path);
+
         // 页面跳转到二维码指定页面，需要 path 为正确的 
-        res.path && wx.navigateTo({
-          url: path
-        })
+        // res.path && wx.navigateTo({
+        //   url: path
+        // })
+        wx.showModal({
+          title: '提示',
+          content: '点击确定进行兑换',
+          showCancel: true,
+          success: function (res) {
+            if (res.confirm) {
+              
+            }
+          }
+        });
       }
     })
   }
