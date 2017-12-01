@@ -46,8 +46,8 @@ Page({
       title: '提示',
       content: '请确定该券为自己的商户券',
       showCancel: true,
-      confirmText: "确定",
-      cancelText: "取消",
+      // confirmText: "确定",
+      // cancelText: "取消",
       confirmColor: '#e6251c',
       success: function (res) {
         if (res.confirm) {
