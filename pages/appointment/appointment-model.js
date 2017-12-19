@@ -22,10 +22,10 @@ class Appointment extends Base {
           console.log('2---' + data.items.charCodeAt(0));
         }
         // data = data.items;
-        callback && callback(data);
+        callback && callback(true,data);
       },
       eCallback: function () {
-        callback && callback(data);
+        callback && callback(false,data);
       }
     };
     this.request(param);

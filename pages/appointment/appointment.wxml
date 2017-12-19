@@ -1,22 +1,31 @@
 <!--pages/appointment/appointment.wxml-->
 <!--引用模板  -->
 <import src="/pages/template/orderNumber/orderNumber.wxml" />
+<view class="container"  hidden="{{loadingStatus!=1}}">
+  <view class="page" wx:if="{{order_data.length !== 0}}">
+    <view class='list'>
+      <view class="com_title">{{order_data.appointment_time}}</view>
+    </view>
+    <!--url="/pages/complete/details/details?title=details"   -->
+    <block wx:for="{{orderDet}}" wx:key="index">
+      <navigator url="/pages/appointment/app_details/app_details?title=app_details" bindtap="listClick" class="weui-cell weui-cell_access" >
+        <template is="orderNumber" data="{{...orderDet}}" />
+      </navigator>
+    </block>
+    
+    <!--上拉刷新  -->
 
-<view class="page" wx:if="{{order_data.length !== 0}}">
-  <view class='list'>
-    <view class="com_title">{{order_data.appointment_time}}</view>
   </view>
-  <!--url="/pages/complete/details/details?title=details"   -->
-  <block wx:for="{{orderDet}}" wx:key="index">
-    <navigator url="/pages/appointment/app_details/app_details?title=app_details" bindtap="listClick" class="weui-cell weui-cell_access" >
-      <template is="orderNumber" data="{{...orderDet}}" />
-    </navigator>
-  </block>
-  
-  <!--上拉刷新  -->
 
+  <view class='without' wx:if="{{order_data}}.length == 0">
+      <text>您当前没有任何订单</text>
+  </view>
 </view>
 
-<view class='without' wx:if="{{order_data}}.length == 0">
-    <text>您当前没有任何订单</text>
+<loading hidden="{{loadingStatus!=0}}">
+    加载中...
+</loading>
+
+<view class="load-data-fail" hidden="{{loadingStatus!=2}}">
+    数据加载失败，下拉重新加载
 </view>

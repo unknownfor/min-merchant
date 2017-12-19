@@ -21,10 +21,10 @@ class Cancel extends Base {
           console.log('1---' + data.charCodeAt(0));
           console.log('2---' + data.items.charCodeAt(0));
         }
-        callback && callback(data);
+        callback && callback(true,data);
       },
       eCallback: function () {
-        callback && callback(data);
+        callback && callback(false,data);
       }
     };
     this.request(param);

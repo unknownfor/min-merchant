@@ -24,9 +24,27 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "122",
+					"id": 0,
+					"name": "已完成",
 					"pathName": "pages/complete/complete",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "已取消",
+					"pathName": "pages/cancel/cancel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "预约",
+					"pathName": "pages/appointment/appointment",
 					"query": ""
 				}
 			]

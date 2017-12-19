@@ -14,10 +14,10 @@ class Complete extends Base {
       data:paramsData,
      
       sCallback: function (data) {
-        callback && callback(data);
+        callback && callback(true,data);
       },
       eCallback: function (data) {
-        callback && callback(data);
+        callback && callback(false,data);
       }
     };
     this.request(param);

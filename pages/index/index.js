@@ -21,7 +21,6 @@ Page({
   _loadData:function(callback){
     index.getTotalInfo(null, (flag,res) => {
       if(flag){
-        this.data;
         this.setData({
           loadingStatus: 1,
           orderNum: res.order_num,
@@ -29,7 +28,7 @@ Page({
           newFinishOrderNum: res.new_finish_order_num
         });
       }else{
-        that._loadFail();
+        this._loadFail();
       }
       callback && callback();
     });
