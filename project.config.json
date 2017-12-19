@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.5.2",
-	"appid": "wxb700062bfda160ac",
+	"appid": "wx3bab44fdf7c35841",
 	"projectname": "merchant",
 	"condition": {
 		"search": {
@@ -22,7 +22,14 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "122",
+					"pathName": "pages/complete/complete",
+					"query": ""
+				}
+			]
 		}
 	}
 }

@@ -1,13 +1,18 @@
-<template name="orderNumber"  wx:if="{{order_data.length !== 0}}">
-  <view class='order'  wx:if="{{order_data}}.length !== 0" >
-    <view class='lists'>
-      <view class='lists_l'>
-        <view>订单编号</view>
-        <view>{{order_data.ordersn}}</view>
-      </view>
-      <view class='lists_r'>
-        <text class='red'> +{{order_data.price}}</text>元</view>
-    </view>
-    <view class='paytime'>付款时间{{order_data.createtime}}</view>
-  </view>
+<template name="orderNumber"  wx:if="{{data.length !== 0}}">
+  <block wx:for="{{data}}" wx:key="index">
+      <navigator url="/pages/complete/details/details?id={{item.id}}" bindtap="listClick" class="weui-cell weui-cell_access" >
+          <view class='order'>
+            <view class='lists'>
+              <view class='lists_l'>
+                <view>订单编号</view>
+                <view>{{item.ordersn}}</view>
+              </view>
+              <view class='lists_r'>
+                <text class='red'> +{{item.price}}</text>元</view>
+            </view>
+            <view class='paytime'>付款时间{{item.createtime}}</view>
+          </view>
+      </navigator>
+    </block>
+
 </template>

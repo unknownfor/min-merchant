@@ -1,4 +1,5 @@
-<view class="page1">
+
+<view class="container page1"  hidden="{{loadingStatus!=1}}">
   <view class='page-top'>
     <view class='user' bindtap='toInfo'>  
         <image class="jia" src='../../imgs/ic_jia_white.png'></image>
@@ -48,4 +49,12 @@
 
      </view> 
   </view>
+</view>
+
+<loading hidden="{{loadingStatus!=0}}">
+    加载中...
+</loading>
+
+<view class="load-data-fail" hidden="{{loadingStatus!=2}}">
+    数据加载失败，下拉重新加载
 </view>

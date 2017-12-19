@@ -10,21 +10,18 @@ Page({
   },
   
   onLoad: function (options) {
-    var that = this,//不要漏了这句，很重要
-    date = new Date(),
-    year = date.getFullYear(),
-    month = date.getMonth() + 1,
-    day = date.getDate(),
-    startDate = [year, month, day].join('-'),
-    endDate = [year, month, day].join('-'),
-    paramsData = {
-      order_status: 1,
-      date_type:1,
-      date_start:startDate,
-      date_end: endDate,
-      page:3,
-      pageSize:5
-    };
+    var that = this,
+        date = new Date(),
+        endDate = date.format('yyyy-MM-dd'),
+        startDate = '2017-01-01',
+        paramsData = {
+          order_status: 1,
+          date_type:1,
+          date_start:startDate,
+          date_end: endDate,
+          page:3,
+          pageSize:5
+        };
     // console.log(startDate)
     complete.getCompleteData(paramsData,(res)=>{
       // 获取数据成功
@@ -45,6 +42,11 @@ Page({
         })
       }
     })
-  }
+  },
+
+  //把订单记录按时间分组
+  groupByTime:function(){
+    
+  },
   
 })

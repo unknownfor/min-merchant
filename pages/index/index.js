@@ -6,7 +6,8 @@ Page({
     mobile: '', 
     orderNum:'',
     orderMoney:'',
-    newFinishOrderNum:''
+    newFinishOrderNum:'',
+    loadingStatus:0,
   },
   onLoad: function (options) {
     this.setData({
@@ -18,14 +19,20 @@ Page({
 
   /*加载数据*/
   _loadData:function(callback){
-    index.getTotalInfo(null, (res) => {
-      this.setData({
-        orderNum: res.order_num,
-        orderMoney: res.order_money,
-        newFinishOrderNum: res.new_finish_order_num
-      });
+    index.getTotalInfo(null, (flag,res) => {
+      if(flag){
+        this.data;
+        this.setData({
+          loadingStatus: 1,
+          orderNum: res.order_num,
+          orderMoney: res.order_money,
+          newFinishOrderNum: res.new_finish_order_num
+        });
+      }else{
+        that._loadFail();
+      }
       callback && callback();
-    })
+    });
   },
 
   changeShowStatus:function(){
@@ -71,16 +78,23 @@ Page({
         }
       }
     });
-
-
-    
   },
 
   /*下拉刷新页面*/
   onPullDownRefresh: function(){
+    this.setData({
+      loadingStatus:0
+    });
     this._loadData(()=>{
       wx.stopPullDownRefresh();
     });
-  }
+  },
+
+  /*请求失败*/
+  _loadFail:function(){
+    this.setData({
+      loadingStatus:2
+    });
+  },
 
 });

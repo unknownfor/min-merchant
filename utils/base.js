@@ -9,6 +9,7 @@ class Base {
         this.baseRestUrl = Config.restUrl;
         this.areaDataUrl=Config.areaDataUrl;
         this.onPay=Config.onPay;
+        this.formatTime();
     }
     //http 请求类, 当noRefech为true时，不做未授权重试机制
     request(params, noRefetch) {
@@ -68,17 +69,38 @@ class Base {
 
     //时间格式化
     formatTime(date) {
-        var year = date.getFullYear()
-        var month = date.getMonth() + 1
-        var day = date.getDate()
+        // var year = date.getFullYear()
+        // var month = date.getMonth() + 1
+        // var day = date.getDate()
 
-        var hour = date.getHours()
-        var minute = date.getMinutes()
-        var second = date.getSeconds()
+        // var hour = date.getHours()
+        // var minute = date.getMinutes()
+        // var second = date.getSeconds()
 
 
-        return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+        // return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+      
+      Date.prototype.format = function (format) {
+        var o = {
+          "M+": this.getMonth() + 1, //month
+          "d+": this.getDate(), //day
+          "h+": this.getHours(), //hour
+          "m+": this.getMinutes(), //minute
+          "s+": this.getSeconds(), //second
+          "q+": Math.floor((this.getMonth() + 3) / 3), //quarter
+          "S": this.getMilliseconds() //millisecond
+        }
+        if (/(y+)/.test(format)) format = format.replace(RegExp.$1,
+          (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o) if (new RegExp("(" + k + ")").test(format))
+          format = format.replace(RegExp.$1,
+            RegExp.$1.length == 1 ? o[k] :
+              ("00" + o[k]).substr(("" + o[k]).length));
+        return format;
+      };
     }
+
+    
 
     formatNumber(n) {
         n = n.toString()
