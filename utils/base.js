@@ -10,25 +10,54 @@ class Base {
         this.areaDataUrl=Config.areaDataUrl;
         this.onPay=Config.onPay;
         this.formatTime();
+        this.defaultOptions={
+          needMerchType:true,
+          setUpUrl:true,
+          type:'get'
+        };
     }
+
+    extentConfig(config, myConfig) {
+      //浅copy
+      var newobj = config.constructor === Array ? [] : {};
+      for (var i in config) {
+        newobj[i] = config[i];
+      }
+
+      var val;
+      for (var key in myConfig) {
+        val = myConfig[key];
+        if (val != null) {
+          newobj[key] = val;
+        }
+      }
+      return newobj;
+    }
+
     //http 请求类, 当noRefech为true时，不做未授权重试机制
-    request(params, noRefetch) {
+    request(params,options) {
+        options = this.extentConfig(this.defaultOptions,options);
+
         var that = this,
             url=this.baseRestUrl + params.url;
-        if(!params.type){
-            params.type='get';
-        }
         /*不需要再次组装地址*/
-        if(params.setUpUrl==false){
+        if (options.setUpUrl==false){
             url = params.url;
+        }
+       
+        if (!params.data){
+            params.data={};
+        }
+        if (options.needMerchType){
+            params.data.merch_type = this.getInfoFromStorage('userInfo').merch_type;
         }
         wx.request({
             url: url,
             data: params.data,
-            method:params.type,
+            method: options.type,
             header: {
                 'content-type': 'application/json',
-                'token': wx.getStorageSync('token')
+                'token': this.getInfoFromStorage('userInfo').token
             },
             success: function (res) {
 
@@ -87,7 +116,20 @@ class Base {
               ("00" + o[k]).substr(("" + o[k]).length));
         return format;
       };
-    }  
+    }
+
+    /*
+       *从时间戳 得到 时间
+       * para
+       * dateInfo - {num} 时间戳
+       * dateFormat - {string} 时间格式 默认为'yyyy.MM.dd'
+       */
+    getTimeFromTimestamp(timestamp, dateFormat) {
+      if (!dateFormat) {
+        dateFormat = 'yyyy.MM.dd';
+      }
+      return new Date(timestamp * 1000).format(dateFormat);
+    }
 
     formatNumber(n) {
         n = n.toString()
@@ -104,6 +146,56 @@ class Base {
       return /^1(3|5|6|7|8|9)\d{9}$/.test(val);
     };
 
+    /*
+    * 向本地localStorage中写入信息
+    * para:
+    * dictionary - {object} 键值对信息 {key：'userInfo',val:'123132'}
+    * expireDiff - {int} 过期时间 数值，精确到 秒，默认是一个 4 天
+    *
+    * */
+    writeInfoToStorage(dictionary, expireDiff) {
+      wx.removeStorageSync(dictionary.key);
+      if (typeof dictionary.val != 'object' && typeof dictionary.val != 'string') {
+        return;
+      }
+
+      if (typeof dictionary.val != 'object') {
+        var newObj = {
+          val: dictionary.val
+        };
+        dictionary.val = newObj;
+      }
+
+      var reg = /^[0-9]$/;
+      if (!reg.test(expireDiff)) {
+        expireDiff = 4;
+      }
+      var expireTime = Date.parse(new Date()) / 1000 + (expireDiff * 24 * 60 * 60);
+      dictionary.val.expireTime = expireTime;
+      wx.setStorageSync(dictionary.key, dictionary.val);
+    }
+
+    /*
+    * 读取本地localStorage中的信息,
+    * 如果过期，则需要重新获取
+    * para:
+    * keyName - {string} 键值 名称
+    *
+    * */
+    getInfoFromStorage(key) {
+      var info = wx.getStorageSync(key); //myToken
+      var nowTime = Date.parse(new Date()) / 1000;
+      if (info) {
+        var expireTime = info.expireTime;
+        if (!expireTime || nowTime >= expireTime) {
+          wx.removeStorageSync(key);
+          return false;
+        }
+        return info;
+      } else {
+        return false;
+      }
+    }
 };
 
 export {Base};

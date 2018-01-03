@@ -40,14 +40,17 @@
   top: 108rpx;
   left: 40rpx;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
 }
 .re-title{
   font-size: 28rpx;
-  margin-top: 73rpx; 
 }
 .money{
   color: red;
-  margin-top: 48rpx;
+  margin-top: 40rpx;
 }
 .m_num{
   font-size: 60rpx;

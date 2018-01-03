@@ -1,0 +1,20 @@
+<view class="page">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">红包类型</view>
+        <view class="weui-cell__ft">{{data.coupon_type}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">商品名称</view>
+        <view class="weui-cell__ft">{{data.coupon_name}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">订单编号</view>
+        <view class="weui-cell__ft">{{data.ordersn}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">订单时间</view>
+        <view class="weui-cell__ft">{{data.createtime}}</view>
+      </view>
+    </view>
+  </view>

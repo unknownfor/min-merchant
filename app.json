@@ -6,6 +6,8 @@
     "pages/index/exit/exit",
     "pages/complete/complete",
     "pages/complete/details/details",
+    "pages/complete-others/complete-others",
+    "pages/complete-others/details-others/details-others",
     "pages/appointment/appointment",
     "pages/appointment/appDetails/appDetails",
     "pages/cancel/cancel",

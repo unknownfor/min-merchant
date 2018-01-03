@@ -1,4 +1,4 @@
-import { Complete } from 'complete-model.js';
+import { Complete } from 'complete-others-model.js';
 
 var complete = new Complete();//实例化对象
 const app = getApp();
@@ -61,7 +61,7 @@ Page({
   setTimeFormat:function(data){
     var len=data.length;
     for(var i=0;i<len;i++){
-      data[i].createtime = complete.getTimeFromTimestamp(data[i].createtime,'yyyy-MM-dd hh:mm:ss');
+      data[i].receive_time = complete.getTimeFromTimestamp(data[i].receive_time,'yyyy-MM-dd hh:mm:ss');
     }
     return data;
   },

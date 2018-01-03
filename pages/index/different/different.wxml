@@ -1,10 +1,10 @@
-<!--pages/index/different/different.wxml-->
-<view class="page1">
+
+<view class="container page1"  hidden="{{loadingStatus!=1}}">
   <view class='page-top'>
-    <view class='user' bindtap='Toinfo'>  
-        <image class="jia" src='../../../imgs/ic_jia_white.png'></image>
+    <view class='user' bindtap='toInfo'>  
+        <image class="jia" src='/imgs/ic_jia_white.png'></image>
         <text class='infoname'>{{mobile}}</text>
-        <image class='more' src='../../../imgs/btn_more.png'></image>
+        <image class='more' src='/imgs/btn_more.png'></image>
     </view>
     <view class='revenue'>
        <view class='re-title'>今日订单{{orderNum}}笔，合计营收</view> 
@@ -19,34 +19,23 @@
         <view class="weui-cells__title">订单记录</view>
         <view class="weui-cells weui-cells_after-title detline">
 
-           <navigator url="/pages/complete/complete?title=complete" class="weui-cell weui-cell_access" hover-class="weui-cell_active"> 
-          <view class="weui-cell__hd icon_box">
-            <image src="../../../imgs/ic_complete.png"  class="icon"></image>
-          </view>
-          <view class="weui-cell__bd classify">完成订单</view>
-          <view class="weui-badge" style="margin-right: 5px;">{{newFinishOrderNum}}</view>
+           <navigator url="/pages/complete/complete?title=complete" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="changeShowStatus"> 
+              <view class="weui-cell__hd icon_box">
+                <image src="/imgs/ic_complete.png"  class="icon"></image>
+              </view>
+              <view class="weui-cell__bd classify">完成订单</view>
+              <view class="weui-badge {{showStatus?show:hidden}}" style="margin-right: 5px;">{{newFinishOrderNum}}</view>
            </navigator> 
-         
-          <!-- <navigator url="/pages/appointment/appointment?title=appointment" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd icon_box">
-              <image src="../../imgs/ic_yuyue.png"  class="icon" ></image>
-            </view>
-            <view class="weui-cell__bd classify">预约订单</view>
-          </navigator>
-
-          <navigator url="/pages/cancel/cancel?title=cancel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd icon_box">
-              <image src="../../imgs/ic_cancel.png"  class="icon"></image>
-            </view>
-            <view class="weui-cell__bd classify">取消订单</view>
-          </navigator> -->
         </view>
       </view>
-
-      <view class="weui-scan">
-        <button class="Richscan" bindtap="scan" >扫一扫</button>
-       </view>
-
      </view> 
   </view>
+</view>
+
+<loading hidden="{{loadingStatus!=0}}">
+    加载中...
+</loading>
+
+<view class="load-data-fail" hidden="{{loadingStatus!=2}}">
+    数据加载失败，下拉重新加载
 </view>

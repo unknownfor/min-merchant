@@ -1,12 +1,11 @@
 .order{
-   width: 710rpx;
-  height: 210rpx;
+  width: 710rpx;
   background: #fff;
   border-radius: 6rpx;
   margin: 0 auto;
-flex-direction: column;
-padding: 20rpx;
-box-sizing: border-box;
+  flex-direction: column;
+  padding: 20rpx;
+  box-sizing: border-box;
 
 }
 .lists{ 
@@ -15,9 +14,20 @@ box-sizing: border-box;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #f3f3f3;
+  padding: 10px 0;
 }
+
+.lists-others{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+
 .lists_l{
   font-size: 28rpx;
+  line-height: 60rpx;
 }
 .lists_r{
  font-size: 26rpx;

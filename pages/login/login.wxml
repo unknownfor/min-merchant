@@ -1,18 +1,18 @@
 <view class="page">
   <view class="page__hd login-logo">
-    <image class='uinfo' src="../../imgs/logo_jiayouzan.png"></image>
+    <image class='uinfo' src="/imgs/logo_jiayouzan.png"></image>
   </view>
   <view class="page__bd">
     <form bindsubmit="loginFromBtn">
       <view class="weui-cell weui-cell_input section">
         <view class="weui-cell__bd">
-          <image class='phone' src='../../imgs/ic_iphone.png'></image>
+          <image class='phone' src='/imgs/ic_iphone.png'></image>
           <input class="weui-input" placeholder="账号" value="{{mobile}}" type="number" bindinput="userNameInput" maxlength="11" focus="true" name="mobile"/>
         </view>
       </view>
       <view class="weui-cell weui-cell_input section">
         <view class="weui-cell__bd">
-          <image class='phone' src='../../imgs/ic_password.png'></image>
+          <image class='phone' src='/imgs/ic_password.png'></image>
           <input class="weui-input" placeholder="密码" value="{{passwd}}" type="text" bindinput="passwdInput"  password  confirm-type ="go" bindconfirm="loginFromKeyboard" name="passwd"/>
         </view>
       </view>

@@ -2,13 +2,16 @@
 <view class="container page1"  hidden="{{loadingStatus!=1}}">
   <view class='page-top'>
     <view class='user' bindtap='toInfo'>  
-        <image class="jia" src='../../imgs/ic_jia_white.png'></image>
+        <image class="jia" src='/imgs/ic_jia_white.png'></image>
         <text class='infoname'>{{mobile}}</text>
-        <image class='more' src='../../imgs/btn_more.png'></image>
+        <image class='more' src='/imgs/btn_more.png'></image>
     </view>
     <view class='revenue'>
-       <view class='re-title'>今日订单{{orderNum}}笔，合计营收</view> 
-       <view class='money'>￥
+       <view class='re-title'>
+          <text>今日订单{{orderNum}}笔</text>
+          <text wx:if="{{merchType==1}}">，合计营收</text>
+        </view> 
+       <view wx:if="{{merchType==1}}" class='money'>￥
         <text class='m_num'>{{orderMoney}}</text>
       </view> 
     </view>
@@ -19,31 +22,43 @@
         <view class="weui-cells__title">订单记录</view>
         <view class="weui-cells weui-cells_after-title detline">
 
-           <navigator url="/pages/complete/complete?title=complete" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="changeShowStatus"> 
-          <view class="weui-cell__hd icon_box">
-            <image src="../../imgs/ic_complete.png"  class="icon"></image>
-          </view>
-          <view class="weui-cell__bd classify">完成订单</view>
-          <view class="weui-badge {{showStatus?show:hidden}}" style="margin-right: 5px;">{{newFinishOrderNum}}</view>
-           </navigator> 
-         
-          <navigator url="/pages/appointment/appointment?title=appointment" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd icon_box">
-              <image src="../../imgs/ic_yuyue.png"  class="icon" ></image>
-            </view>
-            <view class="weui-cell__bd classify">预约订单</view>
-          </navigator>
+        <block wx:if="{{merchType==1}}">
+            <navigator url="/pages/complete/complete?title=complete" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="changeShowStatus"> 
+                <view class="weui-cell__hd icon_box">
+                  <image src="/imgs/ic_complete.png"  class="icon"></image>
+                </view>
+                <view class="weui-cell__bd classify">完成订单</view>
+                <view class="weui-badge {{showStatus?show:hidden}}" style="margin-right: 5px;">{{newFinishOrderNum}}</view>
+            </navigator> 
+            <navigator  url="/pages/appointment/appointment?title=appointment" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__hd icon_box">
+                <image src="/imgs/ic_yuyue.png"  class="icon" ></image>
+              </view>
+              <view class="weui-cell__bd classify">预约订单</view>
+            </navigator>
 
-          <navigator url="/pages/cancel/cancel?title=cancel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-            <view class="weui-cell__hd icon_box">
-              <image src="../../imgs/ic_cancel.png"  class="icon"></image>
-            </view>
-            <view class="weui-cell__bd classify">取消订单</view>
-          </navigator>
+            <navigator url="/pages/cancel/cancel?title=cancel" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__hd icon_box">
+                <image src="/imgs/ic_cancel.png"  class="icon"></image>
+              </view>
+              <view class="weui-cell__bd classify">取消订单</view>
+            </navigator> 
+          </block>
+
+          <block wx:else>
+              <navigator url="/pages/complete-others/complete-others?title=complete" class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="changeShowStatus"> 
+                  <view class="weui-cell__hd icon_box">
+                    <image src="/imgs/ic_complete.png"  class="icon"></image>
+                  </view>
+                  <view class="weui-cell__bd classify">完成订单</view>
+                  <view class="weui-badge {{showStatus?show:hidden}}" style="margin-right: 5px;">{{newFinishOrderNum}}</view>
+              </navigator> 
+            </block>
+
         </view>
       </view>
 
-      <view class="weui-scan">
+      <view class="weui-scan" wx:if="{{merchType==2}}">
         <button class="Richscan" bindtap="scan" >扫一扫</button>
        </view>
 

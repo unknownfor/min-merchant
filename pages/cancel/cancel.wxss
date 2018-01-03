@@ -1,5 +1,5 @@
 /* pages/appointment/appointment.wxss */
-@import '/pages/template/orderNumber/orderNumber.wxss';
+@import '/pages/template/order-number/order-number.wxss';
 page {
   height: 100%;
   background: #f7f7f7;
@@ -17,10 +17,4 @@ page {
   font-size: 24rpx;
   color: #666;
   line-height: 73rpx;
-}
-.without {
-  text-align: center;
-  font-size: 16px;
-  margin-top: 100rpx;
-  color:#666;
 }

@@ -17,8 +17,7 @@ Page({
   onLoad: function (options) {
     var that = this,//不要漏了这句，很重要
     paramsData = {
-      order_status:2,
-      merch_type:1
+      order_status:2
     };
     appDetails.getAppDetailsData(paramsData,(res) => {
       console.log(res)

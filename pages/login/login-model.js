@@ -9,22 +9,24 @@ class Login extends Base {
     super();
   }
 
-  /*banner图片信息*/
   execLogin(paramsData,callback) {
     var that = this;
     var param = {
       url: '/v3/merchant/login',
       data:paramsData,
-      type:'post',
       sCallback: function (res) {
-        wx.setStorageSync('token', res.token);
+        that.writeInfoToStorage({key:'userInfo',val:res});
         callback && callback(res);
       },
       eCallback: function (res) {
         callback && callback(res);
       }
+    },
+    options={
+      type: 'post',
+      needMerchType:false
     };
-    this.request(param);
+    this.request(param, options);
   }
 };
 

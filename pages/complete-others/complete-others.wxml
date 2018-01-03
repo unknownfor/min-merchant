@@ -1,13 +1,10 @@
 
 <!--引用模板  -->
-<import src="/pages/template/order-number/order-number.wxml" />
+<import src="/pages/template/order-number-others/order-number-others.wxml" />
 
 <view class="container"  hidden="{{loadingStatus!=1}}">
   <view class="page" wx:if="{{order_data.length !== 0}}">
-    <view wx:if="{{order_money_all>0}}" class='list'>
-      <view class="com_money">收入￥{{order_money_all}}</view>
-    </view>
-    <template is="orderNumber" data="{{data:order_data}}" />
+    <template is="orderNumberOthers" data="{{data:order_data}}" />
   </view>
 
   <view class='without' wx:else>

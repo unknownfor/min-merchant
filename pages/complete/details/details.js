@@ -9,34 +9,26 @@ Page({
     status:'',
     total_price:'',
     createtime:'',
-    goods_detail:''
+    goods_detail:'',
+    merchType:0
   },
   
-  onLoad: function () {
+  onLoad: function (options) {
     var that = this,//不要漏了这句，很重要
       paramsData = {
         order_status: 1,
-        merch_type: 1
+        id:options.id
       };
     details.getDetailsData(paramsData, (res) => {
-      // 获取数据成功
-      console.log(res);
-      // let det = {};
-      // det.id = res.id;
-      // det.goods_name = res.goods_name;
-      // det.total = res.total;
-      // det.total_price = res.total_price;
-      // det.one_price = res.one_price;
-      // console.log(res.paytype)
-
       that.setData({
         id: res.id,
         ordersn: res.ordersn,
         paytype: res.paytype,
         status: res.status,
         total_price: res.total_price,
-        createtime: res.createtime,
-        goods_detail: res.goods_detail //this.data.goods_detail.push(det)
+        createtime: details.getTimeFromTimestamp(res.createtime, 'yyyy-MM-dd hh:mm:ss'),
+        goods_detail: res.goods_detail, //this.data.goods_detail.push(det),
+        merchType: details.getInfoFromStorage('userInfo').merch_type
       })
       
     })

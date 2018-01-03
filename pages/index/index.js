@@ -8,6 +8,7 @@ Page({
     orderMoney:'',
     newFinishOrderNum:'',
     loadingStatus:0,
+    merchType:0
   },
   onLoad: function (options) {
     this.setData({
@@ -25,7 +26,8 @@ Page({
           loadingStatus: 1,
           orderNum: res.order_num,
           orderMoney: res.order_money,
-          newFinishOrderNum: res.new_finish_order_num
+          newFinishOrderNum: res.new_finish_order_num,
+          merchType: index.getInfoFromStorage('userInfo').merch_type
         });
       }else{
         this._loadFail();
@@ -47,7 +49,6 @@ Page({
   },
 
   scan: function () {
-
     wx.showModal({
       title: '提示',
       content: '请确定该券为自己的商户券',

@@ -63,21 +63,16 @@ Page({
       mask:true
     });
    
+    //merch_type 1 油站商户 2 异业合作
     login.execLogin(formData,(res) => {
       wx.hideLoading();
       if (res.error_code) {  //登录失败弹框
         this._showModal(res.msg);
       }
       else{
-        if (res.merch_type == 1){
-          wx.redirectTo({
-            url: '../index/index?mobile='+res.mobile
-          });
-        }else{
-          wx.redirectTo({
-            url: '../index/different/different?mobile=' + res.mobile
-          });
-        }
+        wx.redirectTo({
+          url: '../index/index?mobile='+res.mobile
+        });
       }
     });
   },

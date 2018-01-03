@@ -1,6 +1,6 @@
 <view class=page">
   <view class='user'>
-      <image  class="jia " src='../../../imgs/ic_jia_red.png'></image>
+      <image  class="jia " src='/imgs/ic_jia_red.png'></image>
       <view class='infoname'>{{mobile}}</view>
   </view>
 

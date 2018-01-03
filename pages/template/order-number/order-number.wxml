@@ -7,10 +7,10 @@
                 <view>订单编号</view>
                 <view>{{item.ordersn}}</view>
               </view>
-              <view class='lists_r'>
+              <view wx:if="{{item.price}}" class='lists_r'>
                 <text class='red'> +{{item.price}}</text>元</view>
             </view>
-            <view class='paytime'>付款时间{{item.createtime}}</view>
+            <view class='paytime'>付款时间 {{item.createtime}}</view>
           </view>
       </navigator>
     </block>

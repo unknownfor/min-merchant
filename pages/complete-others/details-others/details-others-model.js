@@ -1,22 +1,21 @@
-
-/**
- * Created by jimmy on 17/11/20.
- */
 import { Base } from '../../../utils/base.js';
-class Different extends Base {
+
+class Details extends Base {
   constructor() {
     super();
   }
-  /*首页信息*/
-  getTotalInfo(paramsData, callback) {
+
+  /*banner图片信息*/
+  getDetailsData(paramsData, callback) {
     var that = this;
     var param = {
-      url: 'v3/merchant/auth/home_page',
+      url: 'v3/merchant/auth/orders/' + paramsData.id,
       type: 'GET',
-      // data:paramsData,
+      data: {
+        order_status: 1
+      },
       sCallback: function (data) {
         callback && callback(data);
-
       },
       eCallback: function (data) {
         callback && callback(data);
@@ -25,4 +24,6 @@ class Different extends Base {
     this.request(param);
   }
 };
-export { Different };
+
+export { Details };
+

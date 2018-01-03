@@ -1,0 +1,22 @@
+<template name="orderNumberOthers"  wx:if="{{data.length !== 0}}">
+  <block wx:for="{{data}}" wx:key="index">
+      <navigator url="/pages/complete-others/details-others/details-others?id={{item.id}}" bindtap="listClick" class="weui-cell weui-cell_access" >
+          <view class='order'>
+            <view class='lists-others'>
+                <view class='lists_l'>
+                  <text>领取时间：</text>
+                  <text>{{item.receive_time}}</text>
+                </view>
+                <view class='lists_l'>
+                  <text>订单时间：</text>
+                  <text>{{item.ordersn}}</text>
+                </view>
+                <view class='lists_l'>
+                  <text>商品名称：</text>
+                  <text>{{item.coupon_name}}</text>
+                </view>
+             </view>
+          </view>
+      </navigator>
+    </block>
+</template>
