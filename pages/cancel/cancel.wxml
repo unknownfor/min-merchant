@@ -1,20 +1,17 @@
-
+<!--pages/appointment/appointment.wxml-->
 <!--引用模板  -->
 <import src="/pages/template/orderNumber/orderNumber.wxml" />
+
 <view class="container"  hidden="{{loadingStatus!=1}}">
-  <view class="page"  wx:if="{{order_data.length !== 0}}">
+  <view class="page" wx:if="{{order_data.length !== 0}}">
     <view class='list'>
-      <view class="com_title">{{order_data.appointment_time}}</view>
-    </view> 
-    <!--url="/pages/complete/details/details?title=details"   -->
-    <block wx:for="{{order_data}}" wx:key="index">
-      <navigator url="/pages/cancel/cancel_details/cancel_details?title=cancel_details" bindtap="listClick" class="weui-cell weui-cell_access" id="{{index}}">
-        <template is="orderNumber" data="{{...order_data}}" />
-      </navigator>
-    </block>
+      <view class="com_title">{{order_data.createtime}}</view> 
+      <view class="com_money">收入￥{{order_money_all}}</view>
+    </view>
+    <template is="orderNumber" data="{{data:order_data}}" />
   </view>
 
-  <view class='without' wx:if="{{order_data}}.length == 0">
+  <view class='without' wx:else>
       <text>您当前没有任何订单</text>
   </view>
 </view>

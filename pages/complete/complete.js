@@ -1,4 +1,5 @@
 import { Complete } from 'complete-model.js';
+
 var complete = new Complete();//实例化对象
 const app = getApp();
 Page({
@@ -24,10 +25,9 @@ Page({
         date_type: 1,
         date_start: startDate,
         date_end: endDate,
-        page: 3,
-        pageSize: 5
+        page: 1,
+        pageSize: 150
       };
-    // console.log(startDate)
     complete.getCompleteData(paramsData, (flag, res) => {
       // 获取数据成功
       if (flag) {

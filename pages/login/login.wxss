@@ -3,8 +3,8 @@
   flex-direction: column; 
   align-items: center;
   background: #f7f7f7;
- height:100vh;
- width:100vw;
+  height:100vh;
+  width:100vw;
 }
 .login-logo {  
   margin-top: 110rpx;
@@ -15,24 +15,25 @@
 }
 input {
   border: 1px solid #ccc;
-  font-size: 28rpx;
+  font-size: 34rpx;
   margin-top: 40rpx;
   padding-left: 67rpx;
-  border-radius: 6rpx;
+  border-radius: 10rpx;
   background: #fff;
+  color: #34495e;
 }
 .phone, .psw {
   width: 32rpx;
   height: 32rpx;
   position: absolute;
   left: 20rpx;
-  bottom: 24rpx;
+  bottom:32rpx;
 }
 .loginbtn {
   width: 630rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  border-radius: 8rpx 8rpx 8rpx 8rpx;
+  /* height: 90rpx; */
+  line-height: 90rpx;
+  border-radius: 8rpx;
   background-color: #e6251c;
   font-size: 16px;
   color: white;

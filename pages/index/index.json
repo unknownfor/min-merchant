@@ -2,7 +2,7 @@
 
     "navigationBarBackgroundColor": "#E32928",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "商户端",
+    "navigationBarTitleText": "首页",
     "backgroundColor": "#E32928",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true  

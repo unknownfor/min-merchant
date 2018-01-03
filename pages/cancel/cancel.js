@@ -15,20 +15,17 @@ Page({
 
   /*加载数据*/
   _loadData: function (callback) {
-    var that = this,//不要漏了这句，很重要
+    var that = this,
       date = new Date(),
-      year = date.getFullYear(),
-      month = date.getMonth() + 1,
-      day = date.getDate(),
-      startDate = [year, month, day].join('-'),
-      endDate = [year, month, day].join('-'),
+      endDate = date.format('yyyy-MM-dd'),
+      startDate = '2017-01-01',
       paramsData = {
         order_status: 3,
         date_type: 1,
         date_start: startDate,
         date_end: endDate,
-        page: 3,
-        pageSize: 5
+        page: 1,
+        pageSize: 150
       };
     cancel.getCancelData(paramsData, (flag,res) => {
       if(flag){

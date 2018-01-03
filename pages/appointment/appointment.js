@@ -1,12 +1,15 @@
 
 import { Appointment } from 'appointment-model.js';
+
 var appointment = new Appointment(); //实例化 预约 对象
 Page({
   data: {
+    merch_type: '',
+    order_status: '',
+    order_money_all: '',
     order_data: [],
-    merch_type:'',
-    order_status:'',
     loadingStatus: 0,
+
   },
   onLoad: function (options) {
     this._loadData();
@@ -15,20 +18,17 @@ Page({
   /*加载数据*/
   _loadData: function (callback) {
     var date = new Date(),
-        year = date.getFullYear(),
-        month = date.getMonth() + 1,
-        day = date.getDate(),
-        startDate = [year, month, day].join('-'),
-        endDate = [year, month, day].join('-'),
+      date = new Date(),
+      endDate = date.format('yyyy-MM-dd'),
+      startDate = '2017-01-01',
         paramsData = {
           order_status: 2,
           date_type: 1,
           date_start: startDate,
           date_end: endDate,
-          page: 5,
-          pageSize: 5
+          page: 1,
+          pageSize: 150
         };
-    console.log(startDate)
     appointment.getAppointmentData(paramsData, (flag,res) => {
       console.log(res)
       if(flag){

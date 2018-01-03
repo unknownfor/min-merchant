@@ -69,17 +69,6 @@ class Base {
 
     //时间格式化
     formatTime(date) {
-        // var year = date.getFullYear()
-        // var month = date.getMonth() + 1
-        // var day = date.getDate()
-
-        // var hour = date.getHours()
-        // var minute = date.getMinutes()
-        // var second = date.getSeconds()
-
-
-        // return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-      
       Date.prototype.format = function (format) {
         var o = {
           "M+": this.getMonth() + 1, //month
@@ -98,9 +87,7 @@ class Base {
               ("00" + o[k]).substr(("" + o[k]).length));
         return format;
       };
-    }
-
-    
+    }  
 
     formatNumber(n) {
         n = n.toString()

@@ -16,11 +16,12 @@ class Login extends Base {
       url: '/v3/merchant/login',
       data:paramsData,
       type:'post',
-      sCallback: function (data) {
-        callback && callback(data);
+      sCallback: function (res) {
+        wx.setStorageSync('token', res.token);
+        callback && callback(res);
       },
-      eCallback: function (data) {
-        callback && callback(data);
+      eCallback: function (res) {
+        callback && callback(res);
       }
     };
     this.request(param);

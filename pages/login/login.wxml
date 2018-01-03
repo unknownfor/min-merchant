@@ -3,22 +3,22 @@
     <image class='uinfo' src="../../imgs/logo_jiayouzan.png"></image>
   </view>
   <view class="page__bd">
-    <view class="weui-cell weui-cell_input">
-      <view class="weui-cell__bd">
-        <image class='phone' src='../../imgs/ic_iphone.png'></image>
-         <input class="weui-input" placeholder="账号" value="{{mobile}}" type="number" bindinput="userNameInput" maxlength="11"/>
+    <form bindsubmit="loginFromBtn">
+      <view class="weui-cell weui-cell_input section">
+        <view class="weui-cell__bd">
+          <image class='phone' src='../../imgs/ic_iphone.png'></image>
+          <input class="weui-input" placeholder="账号" value="{{mobile}}" type="number" bindinput="userNameInput" maxlength="11" focus="true" name="mobile"/>
+        </view>
       </view>
-    </view>
-    <view class="weui-cell weui-cell_input">
-      <view class="weui-cell__bd">
-        <image class='phone' src='../../imgs/ic_password.png'></image>
-         <input class="weui-input" placeholder="密码" value="{{passwd}}" type="text" bindinput="passwdInput"  password />
+      <view class="weui-cell weui-cell_input section">
+        <view class="weui-cell__bd">
+          <image class='phone' src='../../imgs/ic_password.png'></image>
+          <input class="weui-input" placeholder="密码" value="{{passwd}}" type="text" bindinput="passwdInput"  password  confirm-type ="go" bindconfirm="loginFromKeyboard" name="passwd"/>
+        </view>
       </view>
-    </view>
-    <!-- <navigator url="/pages/index/index?title=index"> -->
-      <view class="weui-btn-area">
-        <button class="loginbtn {{btnClass}}" bindtap="logIn" >登录</button>
-       </view> 
-    <!-- </navigator> -->
+      <view class="weui-btn-area">       
+          <button  class="loginbtn {{btnClass}}" formType="submit">登录</button>
+        </view> 
+    </form>
   </view>
 </view>

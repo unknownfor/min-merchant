@@ -1,3 +1,9 @@
 @import 'weui.wxss';
 /**app.wxss**/
+.load-data-fail{
+  font-size: 28rpx;
+  color: #34495e;
+  margin-top: 30px;
+  text-align: center
+}
 
