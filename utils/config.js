@@ -4,6 +4,6 @@ class Config{
 
     }
 }
-Config.restUrl = 'https://test.api.jiayouzan.com/';
+Config.restUrl = 'https://bate.api.jiayouzan.com/';
 
 export {Config};
